@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Guild Pass - Restaurant Partnership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap');
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .container {
+                padding: 24px 32px 16px;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 40px 12px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: #c9a962;
+        }
+
+        .header-tag {
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .hero p {
+            color: #999;
+            font-size: 15px;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #c9a962;
+            margin-bottom: 10px;
+        }
+
+        /* Benefits Row - Compact */
+        .benefits-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item {
+            background: #222;
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+        }
+
+        .benefit-item .icon {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .benefit-item h3 {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .benefit-item p {
+            font-size: 10px;
+            color: #888;
+            line-height: 1.3;
+        }
+
+        /* App Mockup + Deals Section */
+        .mockup-section {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 24px;
+            margin-bottom: 20px;
+            align-items: start;
+        }
+
+        /* Phone mockup */
+        .phone-container {
+            position: relative;
+            margin-left: 120px;
+        }
+
+        .phone {
+            background: #000;
+            border-radius: 28px;
+            padding: 10px;
+            border: 2px solid #333;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .phone-screen {
+            background: #1a1a1a;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 12px;
+        }
+
+        .phone-notch {
+            width: 60px;
+            height: 5px;
+            background: #333;
+            border-radius: 3px;
+            margin: 0 auto 10px;
+        }
+
+        .phone-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .phone-back {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .phone-heart {
+            margin-left: auto;
+            color: #e74c3c;
+            font-size: 16px;
+        }
+
+        .restaurant-img {
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .restaurant-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .restaurant-meta {
+            font-size: 10px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .deal-card {
+            background: linear-gradient(135deg, #2d2a24 0%, #252219 100%);
+            border: 1px solid #3d3428;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .deal-label {
+            font-size: 8px;
+            color: #c9a962;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .deal-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .deal-terms {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .deal-btn {
+            background: #c9a962;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 5px;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        /* Handwritten annotations */
+        .handwriting {
+            font-family: 'Caveat', cursive;
+            color: #c9a962;
+        }
+
+        .annotation {
+            position: absolute;
+            font-family: 'Caveat', cursive;
+            color: #c9a962;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .annotation-1 {
+            top: 40px;
+            left: -115px;
+            transform: rotate(-8deg);
+            text-align: right;
+        }
+
+        .annotation-2 {
+            bottom: 60px;
+            left: -115px;
+            transform: rotate(-5deg);
+            text-align: right;
+        }
+
+        .arrow-svg {
+            position: absolute;
+            fill: none;
+            stroke: #c9a962;
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+
+        .arrow-1 {
+            top: 55px;
+            left: -15px;
+            width: 25px;
+            height: 18px;
+        }
+
+        .arrow-2 {
+            bottom: 70px;
+            left: -15px;
+            width: 25px;
+            height: 18px;
+        }
+
+        /* Deal Examples */
+        .deals-side {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .deals-side h3 {
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .deals-side > p {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .deal-examples {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .deal-example {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #222;
+            border-radius: 6px;
+            padding: 8px 10px;
+        }
+
+        .deal-example .deal-icon {
+            width: 32px;
+            height: 32px;
+            background: #2a2520;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .deal-example .deal-info h4 {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 1px;
+        }
+
+        .deal-example .deal-info p {
+            font-size: 10px;
+            color: #888;
+        }
+
+        .deal-example .deal-tag {
+            margin-left: auto;
+            font-family: 'Caveat', cursive;
+            font-size: 13px;
+            color: #c9a962;
+            white-space: nowrap;
+        }
+
+        /* Risk + What You Provide Row */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .risk-box {
+            background: #222;
+            border-radius: 8px;
+            padding: 14px;
+        }
+
+        .risk-box h3 {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .risk-item {
+            text-align: center;
+            padding: 8px;
+            background: #1a1a1a;
+            border-radius: 5px;
+        }
+
+        .risk-item .value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #c9a962;
+        }
+
+        .risk-item .label {
+            font-size: 8px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .provide-box {
+            background: #222;
+            border-radius: 8px;
+            padding: 14px;
+        }
+
+        .provide-box h3 {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .provide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .provide-item {
+            font-size: 11px;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .provide-item .arrow {
+            color: #c9a962;
+            font-size: 10px;
+        }
+
+        /* Proven Model - Compact */
+        .proven-section {
+            background: linear-gradient(135deg, #252219 0%, #1f1d1a 100%);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 14px 20px;
+            margin-bottom: 16px;
+        }
+
+        .proven-section h3 {
+            font-size: 13px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .proven-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .proven-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .proven-item .name {
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .proven-item .stat {
+            font-size: 10px;
+            color: #888;
+        }
+
+        .proven-item .stat span {
+            color: #c9a962;
+            font-weight: 500;
+        }
+
+        .proven-note {
+            text-align: center;
+            font-size: 11px;
+            color: #c9a962;
+            padding-top: 10px;
+            border-top: 1px solid #333;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #c9a962 0%, #a8893d 100%);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .cta h2 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .cta p {
+            font-size: 12px;
+            margin-bottom: 10px;
+            opacity: 0.85;
+        }
+
+        .cta-contact {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .cta-contact a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 12px;
+            color: #555;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">THE GUILD <span>PASS</span></div>
+            <div class="header-tag">Restaurant Partnership</div>
+        </div>
+
+        <!-- Hero -->
+        <div class="hero">
+            <h1>New Customers. Zero Cost. Zero Risk.</h1>
+            <p>Join the membership app bringing hungry customers to Tallinn's best restaurants</p>
+        </div>
+
+        <!-- Benefits Row -->
+        <div class="section-title">WHAT YOUR RESTAURANT GETS</div>
+        <div class="benefits-row">
+            <div class="benefit-item">
+                <div class="icon">👥</div>
+                <h3>New Customers</h3>
+                <p>Members actively looking for places to dine</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">📅</div>
+                <h3>Fill Slow Hours</h3>
+                <p>Turn quiet times into revenue</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">📣</div>
+                <h3>Free Marketing</h3>
+                <p>Featured to all members, no ad spend</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">📊</div>
+                <h3>Track Results</h3>
+                <p>See every redemption in real-time</p>
+            </div>
+        </div>
+
+        <!-- Mockup + Deal Examples -->
+        <div class="mockup-section">
+            <div class="phone-container">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="phone-notch"></div>
+                        <div class="phone-header">
+                            <span class="phone-back">←</span>
+                            <span class="phone-heart">❤️</span>
+                        </div>
+                        <div class="restaurant-img">🍽️</div>
+                        <div class="restaurant-name">Your Restaurant</div>
+                        <div class="restaurant-meta">Estonian · €€ · ⭐ 4.7 · Open Now</div>
+                        <div class="deal-card">
+                            <div class="deal-label">AVAILABLE DEAL</div>
+                            <div class="deal-title">2-for-1 Main Courses</div>
+                            <div class="deal-terms">Valid Mon-Thu · 12:00-16:00</div>
+                            <button class="deal-btn">Redeem Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annotations -->
+                <div class="annotation annotation-1">Your listing<br/>in the app!</div>
+                <svg class="arrow-svg arrow-1" viewBox="0 0 30 20">
+                    <path d="M2 10 Q15 8, 25 5" />
+                    <path d="M25 5 L22 2 M25 5 L21 8" />
+                </svg>
+
+                <div class="annotation annotation-2">You choose<br/>the deal!</div>
+                <svg class="arrow-svg arrow-2" viewBox="0 0 30 20">
+                    <path d="M2 10 Q15 12, 25 15" />
+                    <path d="M25 15 L21 12 M25 15 L22 18" />
+                </svg>
+            </div>
+
+            <div class="deals-side">
+                <div class="section-title">EXAMPLE DEALS YOU COULD OFFER</div>
+                <p>Pick what works for your business — you're in control</p>
+
+                <div class="deal-examples">
+                    <div class="deal-example">
+                        <div class="deal-icon">🍝</div>
+                        <div class="deal-info">
+                            <h4>2-for-1 Main Courses</h4>
+                            <p>Mon-Thu, 12:00-16:00</p>
+                        </div>
+                        <div class="deal-tag">→ Fill lunch seats</div>
+                    </div>
+                    <div class="deal-example">
+                        <div class="deal-icon">💰</div>
+                        <div class="deal-info">
+                            <h4>25% Off Total Bill</h4>
+                            <p>Sun-Wed evenings</p>
+                        </div>
+                        <div class="deal-tag">→ Boost slow nights</div>
+                    </div>
+                    <div class="deal-example">
+                        <div class="deal-icon">🥗</div>
+                        <div class="deal-info">
+                            <h4>Free Appetizer</h4>
+                            <p>Any day, any time</p>
+                        </div>
+                        <div class="deal-tag">→ Low-cost entry</div>
+                    </div>
+                    <div class="deal-example">
+                        <div class="deal-icon">🎫</div>
+                        <div class="deal-info">
+                            <h4>€15 Off €50+ Spend</h4>
+                            <p>Weekday lunches</p>
+                        </div>
+                        <div class="deal-tag">→ Higher orders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk + What You Provide -->
+        <div class="two-col">
+            <div class="risk-box">
+                <h3>Zero Risk — We Mean It</h3>
+                <div class="risk-grid">
+                    <div class="risk-item">
+                        <div class="value">€0</div>
+                        <div class="label">Signup Fee</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="value">€0</div>
+                        <div class="label">Monthly Fee</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="value">0%</div>
+                        <div class="label">Commission</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="value">30d</div>
+                        <div class="label">Cancel Anytime</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="provide-box">
+                <h3>What You Provide</h3>
+                <div class="provide-list">
+                    <div class="provide-item"><span class="arrow">→</span> One deal (you choose)</div>
+                    <div class="provide-item"><span class="arrow">→</span> Set your own days & times</div>
+                    <div class="provide-item"><span class="arrow">→</span> 4-digit PIN for staff</div>
+                    <div class="provide-item"><span class="arrow">→</span> Apply discount in your POS</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proven Model -->
+        <div class="proven-section">
+            <h3>A Proven Model Worldwide</h3>
+            <div class="proven-row">
+                <div class="proven-item">
+                    <div class="name">The Entertainer</div>
+                    <div class="stat"><span>6M users</span> · $1.3B impact</div>
+                </div>
+                <div class="proven-item">
+                    <div class="name">Tastecard (UK)</div>
+                    <div class="stat"><span>3M members</span> · 19 years</div>
+                </div>
+                <div class="proven-item">
+                    <div class="name">NeoTaste (Germany)</div>
+                    <div class="stat"><span>7,000+ restaurants</span></div>
+                </div>
+            </div>
+            <div class="proven-note">None operate in the Baltics — we're bringing this proven model to Estonia, Latvia & Lithuania.</div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Ready to Join?</h2>
+            <p>We're launching with 10-15 select restaurants in Tallinn</p>
+            <div class="cta-contact">
+                <a href="mailto:rob@windgrowth.com">📧 rob@windgrowth.com</a>
+                <a href="tel:+37259107360">📞 +372 5910 7360</a>
+                <a href="https://theguildpass.com">🌐 theguildpass.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 The Guild Pass. Launching in Tallinn, Estonia.
+    </div>
+</body>
+</html>
