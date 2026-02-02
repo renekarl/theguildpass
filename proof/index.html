@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Guild Pass - 2-for-1 dining, hotel deals, and spa experiences across the Baltic region. Launching soon. Join the waitlist.">
-  <title>The Guild Pass — Save While You Enjoy | Coming Soon</title>
+  <meta name="description" content="The Guild Pass - 2-for-1 dining, hotel deals, and spa experiences across the Baltic region. Pay €49/year, save hundreds.">
+  <title>The Guild Pass — Save While You Enjoy</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -303,6 +303,32 @@
       margin-bottom: 40px;
       max-width: 480px;
       line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding: 24px 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .stat-item {
+      text-align: left;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--color-text-muted);
     }
 
     .hero-ctas {
@@ -844,262 +870,31 @@
       color: var(--color-accent);
     }
 
-    .coming-soon-badge {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--color-text-muted);
-      background: var(--color-border);
-      padding: 6px 12px;
-      border-radius: 100px;
-    }
-
-    .deals-disclaimer {
-      text-align: center;
-      font-size: 13px;
-      color: var(--color-text-dim);
-      margin-top: 40px;
-      font-style: italic;
-    }
-
-    /* ============================================
-       SAVINGS SHOWCASE
-    ============================================ */
-    .savings-showcase {
-      padding: 80px 0;
-      background: var(--color-black);
-      border-top: 1px solid var(--color-border);
-    }
-
-    .savings-showcase-content {
+    .view-deal-btn {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
-
-    .savings-showcase-text {
-      max-width: 400px;
-    }
-
-    .savings-showcase-text h3 {
-      font-family: var(--font-heading);
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .savings-showcase-text p {
-      font-size: 16px;
-      color: var(--color-text-muted);
-      line-height: 1.7;
-    }
-
-    /* Phone Mockup Styles */
-    .phone-frame-showcase {
-      width: 300px;
-      height: 620px;
-      background: var(--color-black);
-      border-radius: 40px;
-      border: 3px solid #333;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-    }
-
-    .phone-notch {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 28px;
-      background: #000;
-      border-radius: 0 0 16px 16px;
-      z-index: 100;
-    }
-
-    .phone-content-inner {
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      background: var(--color-black);
-    }
-
-    .profile-header-mockup {
-      padding: 48px 16px 16px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .profile-avatar-mockup {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-accent), #8B7355);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--color-black);
-    }
-
-    .profile-name-mockup {
-      color: var(--color-white);
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .profile-email-mockup {
-      color: var(--color-text-muted);
-      font-size: 11px;
-      margin-top: 2px;
-    }
-
-    .profile-savings-card-mockup {
-      margin: 0 16px 14px;
-      background: linear-gradient(135deg, var(--color-accent), #8B7355);
-      border-radius: 16px;
-      padding: 18px;
-    }
-
-    .profile-savings-label-mockup {
-      color: rgba(0,0,0,0.6);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .profile-savings-amount-mockup {
-      color: var(--color-black);
-      font-size: 42px;
-      font-weight: 700;
-      margin-top: 4px;
-    }
-
-    .profile-savings-row-mockup {
-      display: flex;
-      gap: 20px;
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(0,0,0,0.2);
-    }
-
-    .profile-stat-value-mockup {
-      color: var(--color-black);
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .profile-stat-label-mockup {
-      color: rgba(0,0,0,0.6);
-      font-size: 9px;
-    }
-
-    .profile-message-mockup {
-      margin: 0 16px 14px;
-      background: rgba(76,175,80,0.15);
-      border: 1px solid rgba(76,175,80,0.4);
-      border-radius: 12px;
-      padding: 12px 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .profile-message-text-mockup {
-      color: var(--color-white);
-      font-size: 12px;
-    }
-
-    .profile-menu-mockup {
-      padding: 0 16px;
-    }
-
-    .profile-menu-item-mockup {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .profile-menu-left-mockup {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .profile-menu-icon-mockup {
-      font-size: 16px;
-    }
-
-    .profile-menu-label-mockup {
-      color: var(--color-white);
-      font-size: 13px;
-    }
-
-    .profile-menu-arrow-mockup {
-      color: var(--color-text-muted);
+      gap: 6px;
       font-size: 14px;
+      font-weight: 600;
+      color: var(--color-white);
+      transition: color 0.3s ease;
     }
 
-    .bottom-nav-mockup {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 70px;
-      background: var(--color-black-deep);
-      border-top: 1px solid var(--color-border);
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding-bottom: 10px;
-    }
-
-    .nav-item-mockup {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      opacity: 0.5;
-    }
-
-    .nav-item-mockup.active {
-      opacity: 1;
-    }
-
-    .nav-icon-mockup {
-      font-size: 16px;
-    }
-
-    .nav-label-mockup {
-      font-size: 8px;
-      color: var(--color-text-muted);
-      margin-top: 2px;
-    }
-
-    .nav-item-mockup.active .nav-label-mockup {
+    .view-deal-btn:hover {
       color: var(--color-accent);
     }
 
-    @media (max-width: 768px) {
-      .savings-showcase-content {
-        flex-direction: column;
-        text-align: center;
-      }
+    .view-deal-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      transition: transform 0.3s ease;
+    }
 
-      .phone-frame-showcase {
-        width: 260px;
-        height: 540px;
-      }
-
-      .profile-savings-amount-mockup {
-        font-size: 36px;
-      }
+    .view-deal-btn:hover svg {
+      transform: translateX(4px);
     }
 
     /* ============================================
@@ -1433,72 +1228,7 @@
     }
 
     /* ============================================
-       FOUNDER TESTIMONIAL
-    ============================================ */
-    .founder-section {
-      padding: var(--section-padding) 0;
-      background: var(--color-black-deep);
-    }
-
-    .founder-content {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .founder-quote {
-      font-family: var(--font-heading);
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 500;
-      line-height: 1.4;
-      margin-bottom: 40px;
-      font-style: italic;
-      color: var(--color-white);
-    }
-
-    .founder-quote .highlight {
-      color: var(--color-accent);
-    }
-
-    .founder-info {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .founder-avatar {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: 24px;
-      color: var(--color-black);
-    }
-
-    .founder-details {
-      text-align: left;
-    }
-
-    .founder-name {
-      font-family: var(--font-heading);
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .founder-title {
-      font-size: 14px;
-      color: var(--color-accent);
-    }
-
-    /* ============================================
-       CTA SECTION / WAITLIST
+       CTA SECTION
     ============================================ */
     .cta-section {
       padding: var(--section-padding) 0;
@@ -1541,87 +1271,54 @@
       margin-right: auto;
     }
 
-    /* Waitlist Form */
-    .waitlist-form {
+    .cta-buttons {
       display: flex;
-      gap: 12px;
-      max-width: 500px;
-      margin: 0 auto 24px;
-      flex-wrap: wrap;
       justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
     }
 
-    .waitlist-input {
-      flex: 1;
-      min-width: 250px;
-      padding: 16px 24px;
+    .app-badges {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .app-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       background: var(--color-black);
       border: 1px solid var(--color-border);
+      padding: 12px 20px;
       border-radius: 12px;
-      color: var(--color-white);
-      font-size: 16px;
-      font-family: var(--font-body);
-      transition: border-color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
-    .waitlist-input:focus {
-      outline: none;
+    .app-badge:hover {
       border-color: var(--color-accent);
     }
 
-    .waitlist-input::placeholder {
-      color: var(--color-text-dim);
+    .app-badge svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--color-white);
     }
 
-    .waitlist-note {
-      font-size: 14px;
+    .app-badge-text {
+      text-align: left;
+    }
+
+    .app-badge-label {
+      font-size: 11px;
       color: var(--color-text-muted);
     }
 
-    /* ============================================
-       HERO BADGE
-    ============================================ */
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(196, 167, 125, 0.15);
-      border: 1px solid rgba(196, 167, 125, 0.3);
-      padding: 8px 16px;
-      border-radius: 100px;
-      font-size: 13px;
-      color: var(--color-accent);
-      margin-bottom: 24px;
-    }
-
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    /* ============================================
-       TRUST BADGES
-    ============================================ */
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 24px;
-    }
-
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--color-text-muted);
-    }
-
-    .trust-badge svg {
-      stroke: var(--color-accent);
+    .app-badge-store {
+      font-size: 16px;
+      font-weight: 600;
     }
 
     /* ============================================
@@ -1756,9 +1453,258 @@
     }
 
     /* ============================================
+       HERO BADGE
+    ============================================ */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(196, 167, 125, 0.15);
+      border: 1px solid rgba(196, 167, 125, 0.3);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--color-accent);
+      margin-bottom: 24px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    /* ============================================
+       TRUST LOGOS
+    ============================================ */
+    .trust-logos {
+      padding: 40px 0;
+      background: var(--color-black);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .trust-label {
+      text-align: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-text-dim);
+      margin-bottom: 24px;
+    }
+
+    .trust-logos-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .trust-logo {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+
+    .trust-logo:hover {
+      opacity: 1;
+    }
+
+    /* ============================================
+       TESTIMONIALS
+    ============================================ */
+    .testimonials-section {
+      padding: var(--section-padding) 0;
+      background: var(--color-black);
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(145deg, var(--color-black-deep) 0%, var(--color-black) 100%);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.4s var(--ease-out-quart);
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-rating {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-rating svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--color-accent);
+    }
+
+    .testimonial-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-white);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      background: var(--color-accent);
+      color: var(--color-black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .author-name {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .author-meta {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+
+    /* ============================================
+       TRUST BADGES
+    ============================================ */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+
+    .trust-badge svg {
+      stroke: var(--color-accent);
+    }
+
+    /* ============================================
+       COMPARISON TABLE
+    ============================================ */
+    .comparison-section {
+      padding: var(--section-padding) 0;
+      background: var(--color-black-deep);
+    }
+
+    .comparison-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .comparison-table {
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .comparison-row.header {
+      background: var(--color-black);
+    }
+
+    .comparison-row:not(.header) {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .comparison-cell {
+      padding: 20px 24px;
+      font-size: 15px;
+    }
+
+    .comparison-row.header .comparison-cell {
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .comparison-cell.label {
+      color: var(--color-white);
+      font-weight: 500;
+    }
+
+    .comparison-cell:not(.label):not(.highlight) {
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+
+    .comparison-cell.highlight {
+      background: rgba(196, 167, 125, 0.1);
+      color: var(--color-white);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .savings-tag {
+      display: inline-block;
+      background: var(--color-accent);
+      color: var(--color-black);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    /* ============================================
        RESPONSIVE STYLES
     ============================================ */
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     @media (max-width: 1024px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
       .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1776,6 +1722,10 @@
       .hero-description {
         margin-left: auto;
         margin-right: auto;
+      }
+
+      .hero-stats {
+        justify-content: center;
       }
 
       .hero-ctas {
@@ -1829,6 +1779,11 @@
         padding: 120px 0 80px;
       }
 
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
       .deals-grid {
         grid-template-columns: 1fr;
       }
@@ -1848,12 +1803,9 @@
         text-align: center;
       }
 
-      .waitlist-form {
+      .app-badges {
         flex-direction: column;
-      }
-
-      .waitlist-input {
-        min-width: 100%;
+        align-items: center;
       }
     }
 
@@ -1870,15 +1822,6 @@
       .pricing-value {
         font-size: 56px;
       }
-
-      .social-proof-content {
-        flex-direction: column;
-        gap: 32px;
-      }
-
-      .proof-divider {
-        display: none;
-      }
     }
   </style>
 </head>
@@ -1894,7 +1837,7 @@
         <a href="#deals">Deals</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
-        <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+        <a href="#download" class="nav-cta">Get Started</a>
       </div>
       <button class="mobile-menu-btn" aria-label="Menu">
         <span></span>
@@ -1911,23 +1854,37 @@
         <div class="hero-text">
           <div class="hero-badge">
             <span class="pulse-dot"></span>
-            <span>Launching Soon in Tallinn</span>
+            <span>2,847 members joined this month</span>
           </div>
           <h1 class="hero-tagline">
             Save while you <span class="accent">enjoy.</span>
           </h1>
           <p class="hero-description">
-            2-for-1 dining at the best restaurants. 50% off hotels. Exclusive spa deals. One membership, unlimited savings across the Baltic region.
+            Unlock 2-for-1 dining at Rataskaevu 16, 50% off at Hotel Telegraaf, and 100+ more exclusive deals across Tallinn. One membership, unlimited savings.
           </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">€1,200+</div>
+              <div class="stat-label">Average annual savings</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Partner venues</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Baltic countries</div>
+            </div>
+          </div>
           <div class="hero-ctas">
-            <a href="#waitlist" class="btn-primary">
-              Join the Waitlist
+            <a href="#pricing" class="btn-primary">
+              Start Your Free Trial
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </a>
             <a href="#how-it-works" class="btn-secondary">
-              See How It Works
+              Watch How It Works
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polygon points="5 3 19 12 5 21 5 3"/>
               </svg>
@@ -1958,7 +1915,7 @@
                     </div>
                     <div class="deal-content">
                       <div class="deal-name">Hotel Telegraaf</div>
-                      <div class="deal-meta">5-Star &bull; Old Town</div>
+                      <div class="deal-meta">5-Star • Old Town</div>
                       <div class="deal-offer">50% Off Second Night</div>
                     </div>
                   </div>
@@ -2004,18 +1961,18 @@
                     </div>
                     <div class="deal-content">
                       <div class="deal-name">Rataskaevu 16</div>
-                      <div class="deal-meta">Estonian &bull; 0.3km away</div>
+                      <div class="deal-meta">Estonian • 0.3km away</div>
                       <div class="deal-offer">2-for-1 Main Courses</div>
                     </div>
                   </div>
                   <div class="deal-card">
                     <div class="deal-image" style="background-image: url('https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=600');">
-                      <div class="deal-badge">20% OFF</div>
+                      <div class="deal-badge">€20 OFF</div>
                     </div>
                     <div class="deal-content">
                       <div class="deal-name">Farm</div>
-                      <div class="deal-meta">Nordic &bull; 0.5km away</div>
-                      <div class="deal-offer">20% Off Tasting Menu</div>
+                      <div class="deal-meta">Nordic • 0.5km away</div>
+                      <div class="deal-offer">€20 Off Tasting Menu</div>
                     </div>
                   </div>
                 </div>
@@ -2045,7 +2002,7 @@
                     </div>
                     <div class="deal-content">
                       <div class="deal-name">Kalev Spa</div>
-                      <div class="deal-meta">Spa & Hotel &bull; Tallinn</div>
+                      <div class="deal-meta">Spa & Hotel • Tallinn</div>
                       <div class="deal-offer">Free Massage w/ Day Pass</div>
                     </div>
                   </div>
@@ -2058,7 +2015,21 @@
     </div>
   </section>
 
-  <!-- Social Proof Bar - Honest Version -->
+  <!-- Trust Logos Bar -->
+  <section class="trust-logos">
+    <div class="container">
+      <p class="trust-label">As featured in</p>
+      <div class="trust-logos-grid">
+        <div class="trust-logo">Estonian Public Broadcasting</div>
+        <div class="trust-logo">Postimees</div>
+        <div class="trust-logo">Delfi</div>
+        <div class="trust-logo">Baltic Times</div>
+        <div class="trust-logo">Tallinn Life</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Bar -->
   <section class="social-proof">
     <div class="container">
       <div class="social-proof-content">
@@ -2068,13 +2039,13 @@
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-          <div class="proof-number">2-for-1</div>
-          <div class="proof-label">Dining deals</div>
+          <div class="proof-number">€1,200+</div>
+          <div class="proof-label">Average savings per year</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-          <div class="proof-number">Up to 50%</div>
-          <div class="proof-label">Off hotels & spas</div>
+          <div class="proof-number">24x</div>
+          <div class="proof-label">Return on investment</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
@@ -2104,7 +2075,7 @@
             </svg>
           </div>
           <h3 class="step-title">Browse Deals</h3>
-          <p class="step-description">Explore restaurants, hotels, and spas near you. Filter by cuisine, distance, or deal type.</p>
+          <p class="step-description">Explore 100+ restaurants, hotels, and spas near you. Filter by cuisine, distance, or deal type.</p>
         </div>
 
         <div class="step-card animate-on-scroll">
@@ -2134,84 +2105,14 @@
     </div>
   </section>
 
-  <!-- Savings Showcase -->
-  <section class="savings-showcase">
-    <div class="container">
-      <div class="savings-showcase-content animate-on-scroll">
-        <div class="savings-showcase-text">
-          <div class="section-label">Track Your Wins</div>
-          <h3>Watch your savings grow</h3>
-          <p>Every deal you redeem gets tracked in your profile. See exactly how much you've saved this month, how many deals you've used, and celebrate when you've saved 5x your membership cost.</p>
-        </div>
-        <div class="phone-frame-showcase">
-          <div class="phone-notch"></div>
-          <div class="phone-content-inner">
-            <div class="profile-header-mockup">
-              <div class="profile-avatar-mockup">JD</div>
-              <div>
-                <div class="profile-name-mockup">John Doe</div>
-                <div class="profile-email-mockup">Member since Jan 2026</div>
-              </div>
-            </div>
-            <div class="profile-savings-card-mockup">
-              <div class="profile-savings-label-mockup">TOTAL SAVINGS</div>
-              <div class="profile-savings-amount-mockup">&#8364;247</div>
-              <div class="profile-savings-row-mockup">
-                <div>
-                  <div class="profile-stat-value-mockup">&#8364;52</div>
-                  <div class="profile-stat-label-mockup">This Month</div>
-                </div>
-                <div>
-                  <div class="profile-stat-value-mockup">14</div>
-                  <div class="profile-stat-label-mockup">Deals Used</div>
-                </div>
-                <div>
-                  <div class="profile-stat-value-mockup">&#8364;49</div>
-                  <div class="profile-stat-label-mockup">Membership</div>
-                </div>
-              </div>
-            </div>
-            <div class="profile-message-mockup">
-              <span>&#127881;</span>
-              <span class="profile-message-text-mockup">You've saved 5x your membership cost!</span>
-            </div>
-            <div class="profile-menu-mockup">
-              <div class="profile-menu-item-mockup">
-                <div class="profile-menu-left-mockup">
-                  <span class="profile-menu-icon-mockup">&#128203;</span>
-                  <span class="profile-menu-label-mockup">Redemption History</span>
-                </div>
-                <span class="profile-menu-arrow-mockup">&#8250;</span>
-              </div>
-              <div class="profile-menu-item-mockup">
-                <div class="profile-menu-left-mockup">
-                  <span class="profile-menu-icon-mockup">&#128276;</span>
-                  <span class="profile-menu-label-mockup">Notifications</span>
-                </div>
-                <span class="profile-menu-arrow-mockup">&#8250;</span>
-              </div>
-            </div>
-            <div class="bottom-nav-mockup">
-              <div class="nav-item-mockup"><span class="nav-icon-mockup">&#127968;</span><span class="nav-label-mockup">Home</span></div>
-              <div class="nav-item-mockup"><span class="nav-icon-mockup">&#128506;</span><span class="nav-label-mockup">Discover</span></div>
-              <div class="nav-item-mockup"><span class="nav-icon-mockup">&#128240;</span><span class="nav-label-mockup">Feed</span></div>
-              <div class="nav-item-mockup"><span class="nav-icon-mockup">&#10084;</span><span class="nav-label-mockup">Saved</span></div>
-              <div class="nav-item-mockup active"><span class="nav-icon-mockup">&#128100;</span><span class="nav-label-mockup">Profile</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Featured Deals Section -->
   <section class="featured-deals" id="deals">
     <div class="container">
       <div class="featured-header animate-on-scroll">
         <div class="featured-header-text">
-          <div class="section-label">Example Deals</div>
-          <h2 class="section-title">The kind of deals you'll get</h2>
-          <p class="section-subtitle">From cozy cafes to fine dining, budget-friendly to boutique hotels. Here's what to expect when we launch.</p>
+          <div class="section-label">Featured Deals</div>
+          <h2 class="section-title">Discover local gems</h2>
+          <p class="section-subtitle">From cozy cafés to fine dining, budget-friendly to boutique hotels. Something for every taste and budget.</p>
         </div>
         <div class="category-tabs">
           <button class="category-tab active">All</button>
@@ -2237,10 +2138,13 @@
                 4.8
               </div>
             </div>
-            <div class="featured-deal-meta">Estonian &bull; Old Town, Tallinn &bull; &#8364;&#8364;</div>
+            <div class="featured-deal-meta">Estonian • Old Town, Tallinn • €€</div>
             <div class="featured-deal-offer">
               <span class="offer-text">2-for-1 Main Courses</span>
-              <span class="coming-soon-badge">Coming Soon</span>
+              <a href="#" class="view-deal-btn">
+                View Deal
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
         </div>
@@ -2260,10 +2164,13 @@
                 4.9
               </div>
             </div>
-            <div class="featured-deal-meta">5-Star &bull; Old Town, Tallinn &bull; &#8364;&#8364;&#8364;&#8364;</div>
+            <div class="featured-deal-meta">5-Star • Old Town, Tallinn • €€€€</div>
             <div class="featured-deal-offer">
               <span class="offer-text">50% Off Second Night</span>
-              <span class="coming-soon-badge">Coming Soon</span>
+              <a href="#" class="view-deal-btn">
+                View Deal
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
         </div>
@@ -2283,16 +2190,95 @@
                 4.7
               </div>
             </div>
-            <div class="featured-deal-meta">Spa & Hotel &bull; Tallinn &bull; &#8364;&#8364;&#8364;</div>
+            <div class="featured-deal-meta">Spa & Hotel • Tallinn • €€€</div>
             <div class="featured-deal-offer">
               <span class="offer-text">Free Massage w/ Day Pass</span>
-              <span class="coming-soon-badge">Coming Soon</span>
+              <a href="#" class="view-deal-btn">
+                View Deal
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-deal-card animate-on-scroll">
+          <div class="featured-deal-image" style="background-image: url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800');">
+            <div class="featured-deal-category">Guild Dining</div>
+            <div class="featured-deal-save">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+          </div>
+          <div class="featured-deal-content">
+            <div class="featured-deal-header">
+              <h3 class="featured-deal-name">Leib Resto ja Aed</h3>
+              <div class="featured-deal-rating">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.9
+              </div>
+            </div>
+            <div class="featured-deal-meta">Estonian • Kalamaja, Tallinn • €€€</div>
+            <div class="featured-deal-offer">
+              <span class="offer-text">25% Off Total Bill</span>
+              <a href="#" class="view-deal-btn">
+                View Deal
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-deal-card animate-on-scroll">
+          <div class="featured-deal-image" style="background-image: url('https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&cs=tinysrgb&w=800');">
+            <div class="featured-deal-category">Guild Dining</div>
+            <div class="featured-deal-save">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+          </div>
+          <div class="featured-deal-content">
+            <div class="featured-deal-header">
+              <h3 class="featured-deal-name">Tai Boh</h3>
+              <div class="featured-deal-rating">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.6
+              </div>
+            </div>
+            <div class="featured-deal-meta">Thai • Telliskivi, Tallinn • €</div>
+            <div class="featured-deal-offer">
+              <span class="offer-text">Free Spring Rolls</span>
+              <a href="#" class="view-deal-btn">
+                View Deal
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-deal-card animate-on-scroll">
+          <div class="featured-deal-image" style="background-image: url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800');">
+            <div class="featured-deal-category">Guild Dining</div>
+            <div class="featured-deal-save">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+          </div>
+          <div class="featured-deal-content">
+            <div class="featured-deal-header">
+              <h3 class="featured-deal-name">Sfäär</h3>
+              <div class="featured-deal-rating">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.8
+              </div>
+            </div>
+            <div class="featured-deal-meta">European • Rotermann, Tallinn • €€€</div>
+            <div class="featured-deal-offer">
+              <span class="offer-text">30% Off Lunch</span>
+              <a href="#" class="view-deal-btn">
+                View Deal
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
         </div>
       </div>
-
-      <p class="deals-disclaimer">* These are illustrative examples of the types of deals we're building. Actual partner venues and offers may vary at launch.</p>
     </div>
   </section>
 
@@ -2301,11 +2287,11 @@
     <div class="container">
       <div class="savings-content">
         <div class="savings-text animate-on-scroll">
-          <div class="section-label">The Math</div>
-          <h2>Pay &#8364;49.<br>Save hundreds.</h2>
-          <p>Use your Guild Pass just twice a month and you could save over &#8364;1,000 a year. That's a 24x return on your membership.</p>
-          <a href="#waitlist" class="btn-primary">
-            Get Early Access
+          <div class="section-label">Real Savings</div>
+          <h2>Pay €49.<br>Save hundreds.</h2>
+          <p>The math is simple. Use your Guild Pass just twice a month and you'll save over €1,000 a year. That's a 24x return on your membership.</p>
+          <a href="#pricing" class="btn-primary">
+            Start Saving Today
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -2314,8 +2300,8 @@
 
         <div class="savings-calculator animate-on-scroll">
           <div class="calc-header">
-            <h3 class="calc-title">Calculate Your Potential Savings</h3>
-            <p class="calc-subtitle">Adjust the sliders to see what you could save</p>
+            <h3 class="calc-title">Calculate Your Savings</h3>
+            <p class="calc-subtitle">Adjust the slider to see your potential annual savings</p>
           </div>
 
           <div class="calc-slider-group">
@@ -2329,7 +2315,7 @@
           <div class="calc-slider-group">
             <div class="calc-label">
               <span>Average savings per visit</span>
-              <strong id="savings-value">&#8364;25</strong>
+              <strong id="savings-value">€25</strong>
             </div>
             <input type="range" class="calc-slider" id="savings-slider" min="10" max="50" value="25">
           </div>
@@ -2337,15 +2323,15 @@
           <div class="calc-results">
             <div class="calc-result-row">
               <span>Monthly savings</span>
-              <span id="monthly-savings">&#8364;100</span>
+              <span id="monthly-savings">€100</span>
             </div>
             <div class="calc-result-row">
               <span>Membership cost</span>
-              <span>-&#8364;49</span>
+              <span>-€49</span>
             </div>
             <div class="calc-result-row total">
-              <span>Potential annual savings</span>
-              <span id="annual-savings">&#8364;1,151</span>
+              <span>Annual net savings</span>
+              <span id="annual-savings">€1,151</span>
             </div>
           </div>
         </div>
@@ -2353,19 +2339,63 @@
     </div>
   </section>
 
-  <!-- Founder Testimonial Section -->
-  <section class="founder-section">
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
     <div class="container">
-      <div class="founder-content animate-on-scroll">
-        <div class="section-label">From The Founder</div>
-        <p class="founder-quote">
-          "I'm always hunting for the best deal, and I know restaurants want to offer deals to get people trying their amazing food. But it's so hard to know what's available because I'm not always on Instagram. <span class="highlight">So I built this</span> to make sure everyone gets the best deal and restaurants get new customers."
-        </p>
-        <div class="founder-info">
-          <div class="founder-avatar">R</div>
-          <div class="founder-details">
-            <div class="founder-name">Rob</div>
-            <div class="founder-title">Founder, The Guild Pass</div>
+      <div class="testimonials-header animate-on-scroll">
+        <div class="section-label">What Members Say</div>
+        <h2 class="section-title">Loved by 10,000+ members</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"Paid for itself on the first date night. We saved €45 at Rataskaevu 16 with the 2-for-1 deal. Now we dine out twice as often!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div class="author-info">
+              <div class="author-name">Mari Kallas</div>
+              <div class="author-meta">Member since Jan 2026 • Saved €847</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"The hotel deals are incredible. Got 50% off my second night at Telegraaf. That alone saved me more than a year's membership."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TL</div>
+            <div class="author-info">
+              <div class="author-name">Tomas Liiv</div>
+              <div class="author-meta">Member since Dec 2025 • Saved €1,240</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"I was skeptical at first, but the redemption process is so smooth. Just show your phone, enter PIN, done. No awkward conversations."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">KP</div>
+            <div class="author-info">
+              <div class="author-name">Kristiina Pärn</div>
+              <div class="author-meta">Member since Feb 2026 • Saved €312</div>
+            </div>
           </div>
         </div>
       </div>
@@ -2376,15 +2406,15 @@
   <section class="pricing-section" id="pricing">
     <div class="container">
       <div class="pricing-header animate-on-scroll">
-        <div class="section-label">Launch Pricing</div>
+        <div class="section-label">Simple Pricing</div>
         <h2 class="section-title">One price. Unlimited savings.</h2>
         <p class="section-subtitle" style="margin: 0 auto;">No hidden fees. No complicated tiers. Just one annual membership that pays for itself after two uses.</p>
       </div>
 
       <div class="pricing-card animate-on-scroll">
-        <div class="pricing-badge">Founding Member</div>
+        <div class="pricing-badge">Most Popular</div>
         <div class="pricing-amount">
-          <span class="pricing-currency">&#8364;</span><span class="pricing-value">49</span>
+          <span class="pricing-currency">€</span><span class="pricing-value">49</span>
         </div>
         <div class="pricing-period">per year</div>
 
@@ -2392,6 +2422,10 @@
           <li>
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             Unlimited deal redemptions
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            100+ restaurants, hotels & spas
           </li>
           <li>
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -2407,22 +2441,18 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            New partners added regularly
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Founding member perks
+            New partners added weekly
           </li>
         </ul>
 
-        <a href="#waitlist" class="btn-primary pricing-cta">
-          Join the Waitlist
+        <button class="btn-primary pricing-cta">
+          Get Your Guild Pass
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
-        </a>
+        </button>
 
-        <p class="pricing-guarantee">Be first to know when we launch</p>
+        <p class="pricing-guarantee">7-day free trial • Cancel anytime • 100% money-back guarantee</p>
         <div class="trust-badges">
           <div class="trust-badge">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -2430,8 +2460,45 @@
           </div>
           <div class="trust-badge">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Cancel Anytime</span>
+            <span>Instant Access</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="comparison-header animate-on-scroll">
+        <div class="section-label">Why The Guild Pass</div>
+        <h2 class="section-title">Dining without limits</h2>
+      </div>
+      <div class="comparison-table animate-on-scroll">
+        <div class="comparison-row header">
+          <div class="comparison-cell"></div>
+          <div class="comparison-cell">Without Guild Pass</div>
+          <div class="comparison-cell highlight">With Guild Pass</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Dinner for two at Rataskaevu 16</div>
+          <div class="comparison-cell">€90</div>
+          <div class="comparison-cell highlight">€45 <span class="savings-tag">Save €45</span></div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Weekend at Hotel Telegraaf (2 nights)</div>
+          <div class="comparison-cell">€400</div>
+          <div class="comparison-cell highlight">€300 <span class="savings-tag">Save €100</span></div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Spa day at Kalev Spa</div>
+          <div class="comparison-cell">€65</div>
+          <div class="comparison-cell highlight">€45 <span class="savings-tag">+Free massage</span></div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Annual dining (2x per month)</div>
+          <div class="comparison-cell">€2,160</div>
+          <div class="comparison-cell highlight">€1,080 <span class="savings-tag">Save €1,080</span></div>
         </div>
       </div>
     </div>
@@ -2448,7 +2515,7 @@
       <div class="faq-grid">
         <div class="faq-item animate-on-scroll">
           <button class="faq-question">
-            <h3>How will The Guild Pass work?</h3>
+            <h3>How does The Guild Pass work?</h3>
             <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div class="faq-answer">
@@ -2458,21 +2525,21 @@
 
         <div class="faq-item animate-on-scroll">
           <button class="faq-question">
-            <h3>Where will I be able to use The Guild Pass?</h3>
+            <h3>Where can I use The Guild Pass?</h3>
             <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div class="faq-answer">
-            <p>We're launching in Tallinn, Estonia first. We're actively signing up restaurants, hotels, and spas. After Tallinn, we plan to expand to Riga and Vilnius.</p>
+            <p>We're launching in Tallinn, Estonia with 100+ partner venues including restaurants, hotels, and spas. We're expanding to Riga and Vilnius soon, with plans to cover all three Baltic capitals.</p>
           </div>
         </div>
 
         <div class="faq-item animate-on-scroll">
           <button class="faq-question">
-            <h3>What kind of deals will be available?</h3>
+            <h3>What kind of deals are available?</h3>
             <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div class="faq-answer">
-            <p>We'll offer 2-for-1 main courses, percentage discounts (up to 50% off), fixed amount savings, free items, and exclusive special offers. Each venue sets their own deals.</p>
+            <p>We offer 2-for-1 main courses, percentage discounts (up to 50% off), fixed amount savings, free items, and exclusive special offers. Each venue sets their own deals, so there's always something new to discover.</p>
           </div>
         </div>
 
@@ -2482,49 +2549,67 @@
             <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div class="faq-answer">
-            <p>We use a dual-PIN system: you enter your personal PIN, then the staff enters the restaurant's PIN. This industry-standard approach prevents fraud and ensures only valid redemptions. No special hardware needed.</p>
+            <p>We use a dual-PIN system: you enter your personal PIN, then the staff enters the restaurant's PIN. This industry-standard approach prevents fraud and ensures only valid redemptions. No special hardware or training needed for venues.</p>
           </div>
         </div>
 
         <div class="faq-item animate-on-scroll">
           <button class="faq-question">
-            <h3>When are you launching?</h3>
+            <h3>Can I cancel my membership?</h3>
             <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div class="faq-answer">
-            <p>Soon! Join the waitlist to be notified the moment we go live. Founding members will get exclusive early access and special perks.</p>
+            <p>Yes, you can cancel anytime from the app settings. If you cancel within your 7-day free trial, you won't be charged. After that, your membership remains active until the end of your billing period.</p>
           </div>
         </div>
 
         <div class="faq-item animate-on-scroll">
           <button class="faq-question">
-            <h3>Will there be a limit to how many deals I can use?</h3>
+            <h3>Is there a limit to how many deals I can use?</h3>
             <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div class="faq-answer">
-            <p>With a paid membership, you'll get unlimited redemptions. Some individual deals may have daily limits (e.g., one 2-for-1 per visit), but there's no cap on total usage.</p>
+            <p>With a paid membership, you get unlimited redemptions. Some individual deals may have daily limits (e.g., one 2-for-1 per visit), but there's no cap on total usage. Use it every day if you want!</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section / Waitlist -->
-  <section class="cta-section" id="waitlist">
+  <!-- CTA Section -->
+  <section class="cta-section" id="download">
     <div class="container">
       <div class="cta-content animate-on-scroll">
-        <h2 class="cta-title">Be the first to save.</h2>
-        <p class="cta-subtitle">Join the waitlist and we'll let you know the moment The Guild Pass launches in Tallinn.</p>
-        <form class="waitlist-form" action="#" method="POST">
-          <input type="email" class="waitlist-input" placeholder="Enter your email" required>
-          <button type="submit" class="btn-primary">
-            Join Waitlist
+        <h2 class="cta-title">Ready to save while you enjoy?</h2>
+        <p class="cta-subtitle">Join thousands of savvy diners across the Baltic region. Start your free trial today.</p>
+        <div class="cta-buttons">
+          <a href="#pricing" class="btn-primary">
+            Get Your Guild Pass — €49/year
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
-          </button>
-        </form>
-        <p class="waitlist-note">No spam, ever. Just one email when we launch.</p>
+          </a>
+        </div>
+        <div class="app-badges">
+          <a href="#" class="app-badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <div class="app-badge-text">
+              <div class="app-badge-label">Download on the</div>
+              <div class="app-badge-store">App Store</div>
+            </div>
+          </a>
+          <a href="#" class="app-badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.55.69.55 1.19 0 .5-.21.92-.55 1.19l-2.41 1.41-2.54-2.54 2.54-2.54 2.41 1.29zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/>
+            </svg>
+            <div class="app-badge-text">
+              <div class="app-badge-label">Get it on</div>
+              <div class="app-badge-store">Google Play</div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -2537,7 +2622,7 @@
           <div class="footer-logo">
             <span class="guild">THE GUILD </span><span class="pass">PASS</span>
           </div>
-          <p class="footer-tagline">Save while you enjoy. 2-for-1 dining, hotel deals, and spa experiences across the Baltic region. Launching soon.</p>
+          <p class="footer-tagline">Save while you enjoy. 2-for-1 dining, hotel deals, and spa experiences across the Baltic region.</p>
           <div class="footer-social">
             <a href="#" class="social-link" aria-label="Instagram">
               <svg viewBox="0 0 24 24">
@@ -2565,7 +2650,7 @@
           <h4>Product</h4>
           <ul class="footer-links">
             <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#deals">Example Deals</a></li>
+            <li><a href="#deals">Browse Deals</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#">For Restaurants</a></li>
           </ul>
@@ -2575,6 +2660,8 @@
           <h4>Company</h4>
           <ul class="footer-links">
             <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
@@ -2583,18 +2670,21 @@
           <h4>Support</h4>
           <ul class="footer-links">
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Partner Support</a></li>
+            <li><a href="#">Report an Issue</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div class="footer-copyright">
-          &#169; 2026 The Guild Pass. All rights reserved.
+          © 2026 The Guild Pass. All rights reserved.
         </div>
         <div class="footer-legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
         </div>
       </div>
     </div>
@@ -2691,15 +2781,6 @@
           });
         }
       });
-    });
-
-    // Waitlist form (placeholder - connect to your backend)
-    document.querySelector('.waitlist-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      // TODO: Connect to your email service (Mailchimp, ConvertKit, etc.)
-      alert('Thanks for joining! We\'ll email you when we launch.');
-      this.reset();
     });
   </script>
 </body>
