@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Restaurant Partners — The Guild Pass</title>
+  <meta name="description" content="Join The Guild Pass for free. Get new customers during off-peak hours, zero commission, cancel anytime. Now signing founding partners in Tallinn.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Restaurant Partners — The Guild Pass">
+  <meta property="og:description" content="New customers through your door at zero cost. Join the membership app bringing hungry diners to Tallinn's best restaurants.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theguildpass.com/partners">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #1A1A1A;
+      --black-deep: #111111;
+      --accent: #C4A77D;
+      --accent-hover: #D4B78D;
+      --white: #FFFFFF;
+      --gray: #888888;
+      --border: #2A2A2A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--black-deep);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Logo Header */
+    .header {
+      padding: 20px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .logo .guild {
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .logo .pass {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 48px 24px 40px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(28px, 7vw, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--gray);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--black);
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .trust-strip {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 20px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .trust-strip span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .trust-strip .check {
+      color: var(--accent);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 48px 24px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    /* How It Works */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      color: var(--black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .steps-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray);
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: var(--black);
+      border-radius: 16px;
+      padding: 32px 24px;
+      margin: 0 24px;
+      max-width: 652px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 500px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: 'Sora', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    .catch-text {
+      font-size: 14px;
+      color: var(--gray);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* Form Section */
+    .form-section {
+      background: linear-gradient(180deg, var(--black-deep) 0%, var(--black) 100%);
+      padding: 48px 24px 60px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-section .section-title {
+      margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+      text-align: center;
+      font-size: 15px;
+      color: var(--gray);
+      margin-bottom: 32px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 16px;
+    }
+
+    @media (min-width: 500px) {
+      .form-row.two-col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .form-group label .optional {
+      color: var(--gray);
+      font-weight: 400;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: var(--black-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 15px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #555;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .form-submit .btn-primary {
+      width: 100%;
+      justify-content: center;
+      padding: 18px 32px;
+      font-size: 17px;
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray);
+      margin-top: 16px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #555;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    /* Mobile Sticky CTA */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      z-index: 1000;
+    }
+
+    .sticky-cta .btn-primary {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 24px;
+    }
+
+    @media (max-width: 600px) {
+      .sticky-cta {
+        display: block;
+      }
+
+      .form-section {
+        padding-bottom: 100px;
+      }
+    }
+
+    /* Thank You State (hidden by default) */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 60px 24px;
+    }
+
+    .thank-you.show {
+      display: block;
+    }
+
+    .thank-you h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .thank-you p {
+      font-size: 15px;
+      color: var(--gray);
+    }
+
+    .thank-you a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <span class="guild">THE GUILD </span><span class="pass">PASS</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">For Restaurants in Tallinn</div>
+    <h1>New Customers Through Your Door — At Zero Cost</h1>
+    <p>Join The Guild Pass, the membership app bringing hungry diners to Tallinn's best restaurants. No signup fee. No commission. No catch.</p>
+    <a href="#apply" class="btn-primary">
+      Apply to Join
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="trust-strip">
+      <span><span class="check">&#10003;</span> &#8364;0 to join</span>
+      <span><span class="check">&#10003;</span> 0% commission</span>
+      <span><span class="check">&#10003;</span> Cancel anytime</span>
+      <span><span class="check">&#10003;</span> 15 founding spots</span>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section>
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>You Choose a Deal</h3>
+          <p>Pick any offer — 2-for-1, 25% off, free appetizer. Set the days and times that work for you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Members Find You</h3>
+          <p>Your restaurant is featured in the app to all paying members looking for places to dine.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Quick PIN Verification</h3>
+          <p>Customer enters their PIN, your staff enters your restaurant's 4-digit PIN. Discount applied. Done.</p>
+        </div>
+      </div>
+    </div>
+    <p class="steps-note">No POS integration. No tablet. No new hardware. Works with your existing setup.</p>
+  </section>
+
+  <!-- Stats / Why Join -->
+  <div class="stats-section">
+    <h2 class="section-title">Zero Cost. Real Results.</h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-value">&#8364;0</div>
+        <div class="stat-label">Cost to join</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">0%</div>
+        <div class="stat-label">Commission — ever</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">1,000+</div>
+        <div class="stat-label">Target members Y1</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">30d</div>
+        <div class="stat-label">Cancel anytime</div>
+      </div>
+    </div>
+    <p class="catch-text">
+      We make money from membership fees, not from you. Your restaurant never pays a cent. You choose the deal, you set the hours, you control everything. If it doesn't work for you, cancel in 30 days.
+    </p>
+  </div>
+
+  <!-- Form Section -->
+  <section class="form-section" id="apply">
+    <div class="form-container">
+      <h2 class="section-title">Apply for Launch</h2>
+      <p class="form-subtitle">We're selecting 15 founding restaurant partners in Tallinn. Fill in the form and we'll be in touch within 24 hours.</p>
+
+      <form class="form" action="https://formspree.io/f/xyzygwqo" method="POST" id="partner-form">
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="restaurant">Restaurant Name</label>
+            <input type="text" id="restaurant" name="restaurant" placeholder="e.g. Rataskaevu 16" required>
+          </div>
+          <div class="form-group">
+            <label for="contact">Contact Name</label>
+            <input type="text" id="contact" name="contact" placeholder="Your name" required>
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@restaurant.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+372 5XXX XXXX" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location / Neighborhood <span class="optional">(optional)</span></label>
+          <input type="text" id="location" name="location" placeholder="e.g. Old Town, Kalamaja, Telliskivi">
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Anything else? <span class="optional">(optional)</span></label>
+          <textarea id="notes" name="notes" placeholder="Questions, preferred contact times, etc."></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">
+            Join The Guild Pass
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <p class="form-note">No commitment required. We'll reach out to schedule a quick 10-minute call.</p>
+      </form>
+
+      <!-- Thank You Message (shown after submission) -->
+      <div class="thank-you" id="thank-you">
+        <h2>Thanks! We'll be in touch within 24 hours.</h2>
+        <p>In the meantime, check out what your listing will look like in the app at <a href="https://theguildpass.com">theguildpass.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &#169; 2026 The Guild Pass &#183; <a href="https://theguildpass.com">theguildpass.com</a> &#183; <a href="mailto:partners@theguildpass.com">partners@theguildpass.com</a>
+  </footer>
+
+  <!-- Mobile Sticky CTA -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#apply" class="btn-primary">
+      Apply to Join
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <script>
+    // Hide sticky CTA when form is in view
+    const form = document.getElementById('apply');
+    const stickyCta = document.getElementById('sticky-cta');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          stickyCta.style.display = 'none';
+        } else {
+          stickyCta.style.display = 'block';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(form);
+
+    // Form submission handling
+    const formEl = document.getElementById('partner-form');
+    const thankYou = document.getElementById('thank-you');
+
+    formEl.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(formEl);
+
+      try {
+        await fetch(formEl.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        formEl.style.display = 'none';
+        document.querySelector('.form-subtitle').style.display = 'none';
+        thankYou.classList.add('show');
+        stickyCta.style.display = 'none';
+      } catch (error) {
+        alert('Something went wrong. Please try again or email us directly at partners@theguildpass.com');
+      }
+    });
+  </script>
+</body>
+</html>
