@@ -219,6 +219,15 @@
       color: var(--color-white);
     }
 
+    .nav-restaurant-link {
+      color: var(--color-accent) !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-restaurant-link:hover {
+      color: var(--color-accent-hover) !important;
+    }
+
     .nav-cta {
       background: var(--color-accent);
       color: var(--color-black);
@@ -1894,6 +1903,7 @@
         <a href="#deals">Deals</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
+        <a href="/partners" class="nav-restaurant-link">For Restaurants</a>
         <a href="#waitlist" class="nav-cta">Join Waitlist</a>
       </div>
       <button class="mobile-menu-btn" aria-label="Menu">
@@ -2515,8 +2525,8 @@
       <div class="cta-content animate-on-scroll">
         <h2 class="cta-title">Be the first to save.</h2>
         <p class="cta-subtitle">Join the waitlist and we'll let you know the moment The Guild Pass launches in Tallinn.</p>
-        <form class="waitlist-form" action="#" method="POST">
-          <input type="email" class="waitlist-input" placeholder="Enter your email" required>
+        <form class="waitlist-form" action="https://formspree.io/f/WAITLIST_FORM_ID" method="POST" id="waitlist-form">
+          <input type="email" name="email" class="waitlist-input" placeholder="Enter your email" required>
           <button type="submit" class="btn-primary">
             Join Waitlist
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2693,13 +2703,31 @@
       });
     });
 
-    // Waitlist form (placeholder - connect to your backend)
-    document.querySelector('.waitlist-form').addEventListener('submit', function(e) {
+    // Waitlist form with Formspree
+    document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      // TODO: Connect to your email service (Mailchimp, ConvertKit, etc.)
-      alert('Thanks for joining! We\'ll email you when we launch.');
-      this.reset();
+      const form = this;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+
+      btn.innerHTML = 'Joining...';
+      btn.disabled = true;
+
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        btn.innerHTML = '&#10003; You\'re on the list!';
+        btn.style.background = '#4CAF50';
+        form.querySelector('input').style.display = 'none';
+      } catch (error) {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      }
     });
   </script>
 </body>

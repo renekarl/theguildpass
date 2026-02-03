@@ -955,6 +955,57 @@
       border: 1px solid rgba(196,167,125,0.2);
     }
 
+    /* Gate Question */
+    .gate-question {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .gate-text {
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .gate-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .gate-btn {
+      padding: 16px 40px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .gate-yes {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    .gate-yes:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .gate-no {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .gate-no:hover {
+      border-color: var(--gray);
+    }
+
     /* FAQ Section */
     .faq-section {
       padding: 48px 24px;
@@ -1338,7 +1389,17 @@
       <h2 class="section-title">Apply for Launch</h2>
       <p class="form-subtitle">We're selecting 15 founding restaurant partners in Tallinn. Fill in the form and we'll be in touch within 24 hours.</p>
 
-      <form class="form" action="https://formspree.io/f/xqeljbjz" method="POST" id="partner-form">
+      <!-- Gate Question -->
+      <div class="gate-question" id="gate-question">
+        <p class="gate-text">Are you a restaurant?</p>
+        <div class="gate-buttons">
+          <button type="button" class="gate-btn gate-yes" id="gate-yes">Yes, I am</button>
+          <button type="button" class="gate-btn gate-no" id="gate-no">No, I'm not</button>
+        </div>
+      </div>
+
+      <!-- Actual Form (hidden initially) -->
+      <form class="form" action="https://formspree.io/f/xqeljbjz" method="POST" id="partner-form" style="display: none;">
         <div class="form-row two-col">
           <div class="form-group">
             <label for="restaurant">Restaurant Name</label>
@@ -1380,12 +1441,6 @@
 
         <p class="form-note">No commitment required. We'll reach out to schedule a quick 10-minute call.</p>
       </form>
-
-      <!-- Thank You Message (shown after submission) -->
-      <div class="thank-you" id="thank-you">
-        <h2>Thanks! We'll be in touch within 24 hours.</h2>
-        <p>In the meantime, check out what your listing will look like in the app at <a href="https://theguildpass.com">theguildpass.com</a></p>
-      </div>
     </div>
   </section>
 
@@ -1438,8 +1493,23 @@
   </div>
 
   <script>
-    // Hide sticky CTA when form is in view
-    const form = document.getElementById('apply');
+    // Gate question handling
+    const gateQuestion = document.getElementById('gate-question');
+    const gateYes = document.getElementById('gate-yes');
+    const gateNo = document.getElementById('gate-no');
+    const formEl = document.getElementById('partner-form');
+
+    gateYes.addEventListener('click', () => {
+      gateQuestion.style.display = 'none';
+      formEl.style.display = 'flex';
+    });
+
+    gateNo.addEventListener('click', () => {
+      window.location.href = 'https://theguildpass.com';
+    });
+
+    // Hide sticky CTA when form section is in view
+    const formSection = document.getElementById('apply');
     const stickyCta = document.getElementById('sticky-cta');
 
     const observer = new IntersectionObserver((entries) => {
@@ -1452,14 +1522,15 @@
       });
     }, { threshold: 0.1 });
 
-    observer.observe(form);
+    observer.observe(formSection);
 
-    // Form submission handling
-    const formEl = document.getElementById('partner-form');
-    const thankYou = document.getElementById('thank-you');
-
+    // Form submission - redirect to thank you page
     formEl.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const submitBtn = formEl.querySelector('button[type="submit"]');
+      submitBtn.innerHTML = 'Submitting...';
+      submitBtn.disabled = true;
 
       const formData = new FormData(formEl);
 
@@ -1470,11 +1541,11 @@
           headers: { 'Accept': 'application/json' }
         });
 
-        formEl.style.display = 'none';
-        document.querySelector('.form-subtitle').style.display = 'none';
-        thankYou.classList.add('show');
-        stickyCta.style.display = 'none';
+        // Redirect to thank you page
+        window.location.href = '/partners/thankyou';
       } catch (error) {
+        submitBtn.innerHTML = 'Join The Guild Pass';
+        submitBtn.disabled = false;
         alert('Something went wrong. Please try again or email us directly at partners@theguildpass.com');
       }
     });

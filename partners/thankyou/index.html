@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Thank You — The Guild Pass</title>
+
+  <!--
+  ==============================================
+  FACEBOOK PIXEL - ADD YOUR CODE HERE
+  ==============================================
+  Place your Facebook Pixel base code here.
+  Then add the conversion event below it:
+
+  fbq('track', 'Lead');
+
+  or for custom conversion:
+
+  fbq('track', 'CompleteRegistration');
+  ==============================================
+  -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #1A1A1A;
+      --black-deep: #111111;
+      --accent: #C4A77D;
+      --white: #FFFFFF;
+      --gray: #888888;
+      --border: #2A2A2A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--black-deep);
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding: 20px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .logo .guild {
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .logo .pass {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .thank-you-section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .thank-you-content {
+      max-width: 500px;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(76, 175, 80, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 40px;
+    }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(28px, 6vw, 36px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      color: var(--gray);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .next-steps {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    .next-steps-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .next-steps ul {
+      list-style: none;
+    }
+
+    .next-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--gray);
+    }
+
+    .next-steps li:last-child {
+      margin-bottom: 0;
+    }
+
+    .next-steps li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #555;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="https://theguildpass.com" class="logo">
+      <span class="guild">THE GUILD </span><span class="pass">PASS</span>
+    </a>
+  </header>
+
+  <section class="thank-you-section">
+    <div class="thank-you-content">
+      <div class="success-icon">&#10003;</div>
+      <h1>Thanks! We'll be in touch within 24 hours.</h1>
+      <p class="subtitle">We've received your application and will reach out shortly to schedule a quick 10-minute call.</p>
+
+      <div class="next-steps">
+        <div class="next-steps-title">What happens next</div>
+        <ul>
+          <li>We'll review your application and reach out within 24 hours</li>
+          <li>Quick 10-minute call to answer your questions</li>
+          <li>Get set up as a founding partner — completely free</li>
+        </ul>
+      </div>
+
+      <a href="https://theguildpass.com" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to The Guild Pass
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2026 The Guild Pass &middot; <a href="https://theguildpass.com">theguildpass.com</a> &middot; <a href="mailto:partners@theguildpass.com">partners@theguildpass.com</a>
+  </footer>
+</body>
+</html>
