@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 50">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600');
+    .guild { font-family: 'Sora', sans-serif; font-weight: 400; font-size: 24px; letter-spacing: 0.25em; fill: #FFFFFF; }
+    .pass { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 24px; letter-spacing: 0.25em; fill: #C4A77D; }
+  </style>
+  <text x="0" y="35">
+    <tspan class="guild">THE GUILD </tspan><tspan class="pass">PASS</tspan>
+  </text>
+</svg>
