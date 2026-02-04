@@ -1,4 +1,9 @@
-# The Guild Pass — Brand Assets
+# nomi pass — Brand Assets
+
+## Brand Name
+- Written as: **nomi pass** (lowercase, two words with space)
+- "nomi" = regular weight, white
+- "pass" = semibold weight, gold
 
 ## Colors
 
@@ -6,9 +11,9 @@
 |------|-----|-------|
 | Black | `#1A1A1A` | Primary background |
 | Black Deep | `#111111` | Secondary background |
-| Accent (Gold/Taupe) | `#C4A77D` | Logo "PASS", CTAs, highlights |
+| Accent (Gold/Taupe) | `#C4A77D` | Logo "pass", CTAs, highlights |
 | Accent Hover | `#D4B78D` | Hover states |
-| White | `#FFFFFF` | Text, logo "THE GUILD" |
+| White | `#FFFFFF` | Text, logo "nomi" |
 | Gray | `#888888` | Muted text |
 | Border | `#2A2A2A` | Subtle borders |
 
@@ -16,25 +21,31 @@
 
 | Usage | Font | Weight |
 |-------|------|--------|
-| Logo | Sora | 400 (GUILD), 600 (PASS) |
+| Logo | Sora | 400 (nomi), 600 (pass) |
 | Headings | Sora | 600-700 |
 | Body | Inter | 400-500 |
 
-**Letter Spacing:** Logo uses `0.25em` spacing
+**Letter Spacing:** Logo uses `0.1em` spacing
 
 ## Logo Files
 
 ### Full Logo
-- `logo-full.svg` — "THE GUILD PASS" horizontal logo
+- `logo-full.svg` — "nomi pass" horizontal logo
 
-### Icon (GP)
-- `icon-gp.svg` — GP icon with web font
-- `icon-gp-standalone.svg` — GP icon with paths (no font dependency)
-- `favicon.svg` — Optimized for small sizes (favicon)
+### Icon (Gateway)
+- `icon-gp.svg` — Gateway arch icon (512x512)
+- `icon-gp-standalone.svg` — Gateway arch icon with paths (no font dependency)
+- `favicon.svg` — Optimized for small sizes (32x32 favicon)
 
-### Usage
-- **G** = White (`#FFFFFF`)
-- **P** = Gold (`#C4A77D`)
+### Icon Design
+The gateway arch symbol represents:
+- Opening doors to extraordinary experiences
+- Access and exclusivity
+- Premium membership
+
+### Icon Colors
+- **Arch** = White (`#FFFFFF`)
+- **Accent bar** = Gold (`#C4A77D`)
 - **Background** = Black (`#1A1A1A`)
 
 ## Favicons

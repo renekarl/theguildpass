@@ -1,13 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600');
-    </style>
-  </defs>
-  <!-- Background -->
+  <!-- Background with rounded corners -->
   <rect width="512" height="512" rx="96" fill="#1A1A1A"/>
-  <!-- GP Letters -->
-  <text x="256" y="340" text-anchor="middle" font-family="Sora, sans-serif" font-weight="600" font-size="260" letter-spacing="-10">
-    <tspan fill="#FFFFFF">G</tspan><tspan fill="#C4A77D">P</tspan>
-  </text>
+
+  <!-- Gateway arch (White) -->
+  <path fill="#FFFFFF" d="M128 400V240c0-70.7 57.3-128 128-128s128 57.3 128 128v160h-64V256c0-35.3-28.7-64-64-64s-64 28.7-64 64v144H128z"/>
+
+  <!-- Gold accent bar -->
+  <rect x="208" y="304" width="96" height="24" rx="12" fill="#C4A77D"/>
 </svg>
