@@ -1,9 +1,14 @@
-# nomi pass — Brand Assets
+# Nomi Pass — Brand Assets
 
 ## Brand Name
-- Written as: **nomi pass** (lowercase, two words with space)
-- "nomi" = regular weight, white
-- "pass" = semibold weight, gold
+- Written as: **Nomi Pass** (title case, two words with space)
+- "Nomi" = regular weight, white
+- "Pass" = semibold weight, gold
+
+## Logo Layout
+- The gateway arch icon is **always positioned to the left** of the text
+- Layout: `[Gateway Icon] Nomi Pass`
+- Never place the icon above, below, or to the right of the text
 
 ## Colors
 
@@ -11,9 +16,9 @@
 |------|-----|-------|
 | Black | `#1A1A1A` | Primary background |
 | Black Deep | `#111111` | Secondary background |
-| Accent (Gold/Taupe) | `#C4A77D` | Logo "pass", CTAs, highlights |
+| Accent (Gold/Taupe) | `#C4A77D` | Logo "Pass", CTAs, highlights |
 | Accent Hover | `#D4B78D` | Hover states |
-| White | `#FFFFFF` | Text, logo "nomi" |
+| White | `#FFFFFF` | Text, logo "Nomi" |
 | Gray | `#888888` | Muted text |
 | Border | `#2A2A2A` | Subtle borders |
 
@@ -21,7 +26,7 @@
 
 | Usage | Font | Weight |
 |-------|------|--------|
-| Logo | Sora | 400 (nomi), 600 (pass) |
+| Logo | Sora | 400 (Nomi), 600 (Pass) |
 | Headings | Sora | 600-700 |
 | Body | Inter | 400-500 |
 
@@ -30,7 +35,7 @@
 ## Logo Files
 
 ### Full Logo
-- `logo-full.svg` — "nomi pass" horizontal logo
+- `logo-full.svg` — "Nomi Pass" horizontal logo with gateway icon on left
 
 ### Icon (Gateway)
 - `icon-gp.svg` — Gateway arch icon (512x512)
