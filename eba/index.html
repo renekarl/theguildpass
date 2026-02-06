@@ -164,6 +164,10 @@
       margin-bottom: 16px;
     }
 
+    p strong {
+      color: var(--white);
+    }
+
     ul {
       list-style: none;
       margin-bottom: 16px;
@@ -188,11 +192,40 @@
       border-radius: 50%;
     }
 
-    /* Value Props Grid */
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+      padding: 24px;
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: 'Sora', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    /* Value Props Grid - 2x2 */
     .value-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
       margin-top: 24px;
     }
 
@@ -224,7 +257,7 @@
     /* Goals */
     .goals-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-top: 24px;
     }
@@ -250,16 +283,26 @@
       color: var(--gray);
     }
 
-    /* Team */
-    .team-grid {
+    /* Team - Founders Row + Advisor Below */
+    .founders-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
       margin-top: 24px;
+      margin-bottom: 32px;
+    }
+
+    .advisor-row {
+      display: flex;
+      justify-content: center;
     }
 
     .team-card {
       text-align: center;
+    }
+
+    .team-card.advisor {
+      max-width: 300px;
     }
 
     .team-photo {
@@ -313,8 +356,8 @@
       letter-spacing: 1px;
     }
 
-    .comparison-table th:first-child {
-      color: var(--white);
+    .comparison-table th:nth-child(2) {
+      color: var(--accent);
     }
 
     .comparison-table td {
@@ -327,16 +370,12 @@
       font-weight: 500;
     }
 
+    .comparison-table td:nth-child(2) {
+      background: rgba(196, 167, 125, 0.08);
+    }
+
     .check {
       color: #4CAF50;
-    }
-
-    .cross {
-      color: #888;
-    }
-
-    .highlight-cell {
-      background: rgba(196, 167, 125, 0.08);
     }
 
     /* Video Placeholder */
@@ -428,6 +467,8 @@
     body.lang-en [data-lang="en"] { display: block; }
     body.lang-en li[data-lang="en"] { display: list-item; }
     body.lang-en span[data-lang="en"] { display: inline; }
+    body.lang-en td[data-lang="en"] { display: table-cell; }
+    body.lang-en th[data-lang="en"] { display: table-cell; }
 
     /* Responsive */
     @media (max-width: 768px) {
@@ -441,9 +482,20 @@
         padding: 40px 20px;
       }
 
-      .team-grid {
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .value-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+      }
+
+      .goals-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .founders-row {
+        grid-template-columns: 1fr;
       }
 
       .comparison-table {
@@ -482,55 +534,81 @@
       <h1 data-lang="et">Tutvustame Nomi Passi</h1>
       <h1 data-lang="en">Introducing Nomi Pass</h1>
 
-      <p class="hero-subtitle" data-lang="et">Liikmelisuspõhine äpp, mis toob uusi kliente Tallinna parimatesse restoranidesse ja baaridesse — ilma komisjonitasudeta.</p>
-      <p class="hero-subtitle" data-lang="en">A membership-based app bringing new customers to Tallinn's best restaurants and bars — with zero commission fees.</p>
+      <p class="hero-subtitle" data-lang="et">Liikmelisusprogramm, mis toob uusi kliente Eesti parimatesse restoranidesse ja baaridesse. Ilma komisjonitasudeta. Ilma kuludeta.</p>
+      <p class="hero-subtitle" data-lang="en">A membership program bringing new customers to Estonia's best restaurants and bars. Zero commission. Zero cost.</p>
     </div>
 
     <!-- What We're Building -->
     <section class="section">
-      <h2 data-lang="et">Mida me ehitame?</h2>
-      <h2 data-lang="en">What We're Building</h2>
+      <h2 data-lang="et">Mis on Nomi Pass?</h2>
+      <h2 data-lang="en">What is Nomi Pass?</h2>
 
-      <p data-lang="et">Nomi Pass on liikmelisusäpp, kus liikmed maksavad aastamaksu, et saada eksklusiivsetele pakkumistele ligipääs — 2-for-1 söögikorrad, hotellikingitused, spa-eripakkumised ja palju muud.</p>
-      <p data-lang="en">Nomi Pass is a membership app where members pay an annual fee to access exclusive deals — 2-for-1 dining, hotel discounts, spa specials, and more.</p>
+      <p data-lang="et">Nomi Pass on liikmelisusprogramm, kus kliendid maksavad aastamaksu, et saada ligipääs eksklusiivsete pakkumistele Eesti parimate restoranide ja baaride juures.</p>
+      <p data-lang="en">Nomi Pass is a membership program where customers pay an annual fee to access exclusive deals at Estonia's best restaurants and bars.</p>
 
-      <p data-lang="et">Restoranid ja baarid määravad ise oma pakkumised, päevad ja kellaajad. Raha tuleb liikmetelt, mitte asutustelt — see tähendab <strong>0% komisjonitasu</strong> partneritele.</p>
-      <p data-lang="en">Restaurants and bars set their own deals, days, and times. Revenue comes from members, not venues — meaning <strong>0% commission</strong> for partners.</p>
+      <p data-lang="et"><strong>Kuidas see töötab:</strong> Liige avab äpi, valib restorani, näitab töötajale telefoni ja sisestab oma PIN-koodi. Allahindlus rakendatakse kohapeal. Raha liigub otse teie kassasse nagu iga tavaline maksetehing.</p>
+      <p data-lang="en"><strong>How it works:</strong> A member opens the app, selects a restaurant, shows their phone to staff, and enters their PIN. The discount is applied on the spot. Money goes directly to your register like any normal transaction.</p>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-value">€0</div>
+          <div class="stat-label" data-lang="et">Liitumistasu</div>
+          <div class="stat-label" data-lang="en">Joining fee</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">0%</div>
+          <div class="stat-label" data-lang="et">Komisjonitasu</div>
+          <div class="stat-label" data-lang="en">Commission</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">100%</div>
+          <div class="stat-label" data-lang="et">Teie kontroll</div>
+          <div class="stat-label" data-lang="en">Your control</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">30p</div>
+          <div class="stat-label" data-lang="et">Tühista igal ajal</div>
+          <div class="stat-label" data-lang="en">Cancel anytime</div>
+        </div>
+      </div>
+
+      <p data-lang="et">Meie tulu tuleb liikmetelt, mitte restoranidelt. Te ei maksa meile kunagi midagi.</p>
+      <p data-lang="en">Our revenue comes from members, not restaurants. You never pay us anything.</p>
     </section>
 
     <!-- Value Proposition -->
     <section class="section">
-      <h2 data-lang="et">Väärtuspakkumine partneritele</h2>
-      <h2 data-lang="en">Value Proposition for Partners</h2>
+      <h2 data-lang="et">Mida teie asutus saab</h2>
+      <h2 data-lang="en">What Your Venue Gets</h2>
 
       <div class="value-grid">
         <div class="value-card">
           <div class="value-icon">👥</div>
           <h3 data-lang="et">Uued kliendid</h3>
           <h3 data-lang="en">New Customers</h3>
-          <p data-lang="et">Ligipääs tuhandetele liikmetele, kes aktiivselt otsivad kohti, kus süüa ja juua.</p>
-          <p data-lang="en">Access to thousands of members actively looking for places to dine and drink.</p>
+          <p data-lang="et">Ligipääs tuhandetele liikmetele, kes aktiivselt otsivad kohti, kus süüa ja juua. Kliendid, kes muidu ei tuleks.</p>
+          <p data-lang="en">Access to thousands of members actively looking for places to dine and drink. Customers who wouldn't have come otherwise.</p>
         </div>
         <div class="value-card">
           <div class="value-icon">📅</div>
           <h3 data-lang="et">Täida vaiksed tunnid</h3>
           <h3 data-lang="en">Fill Quiet Hours</h3>
-          <p data-lang="et">Määra pakkumised just aegadele, mil vajad rohkem kliente — teisipäeva õhtud, pärastlõunad jne.</p>
-          <p data-lang="en">Set deals for times when you need more traffic — Tuesday nights, afternoon slots, etc.</p>
+          <p data-lang="et">Pakkumised kehtivad ainult siis, kui teie otsustate. Teisipäeva õhtud? Pärastlõunad? Teie valik.</p>
+          <p data-lang="en">Deals only apply when you decide. Tuesday nights? Afternoon slots? Your choice.</p>
         </div>
         <div class="value-card">
-          <div class="value-icon">💰</div>
-          <h3 data-lang="et">Null komisjonitasu</h3>
-          <h3 data-lang="en">Zero Commission</h3>
-          <p data-lang="et">Erinevalt delivery-äppidest me ei võta müügilt komisjoni. Tasuta registreerimine, tasuta kasutamine.</p>
-          <p data-lang="en">Unlike delivery apps, we don't take a cut of your sales. Free to join, free to use.</p>
+          <div class="value-icon">📣</div>
+          <h3 data-lang="et">Tasuta turundus</h3>
+          <h3 data-lang="en">Free Marketing</h3>
+          <p data-lang="et">Teie asutus on nähtav kõigile liikmetele äpis. Ilma reklaamikuludeta. Ilma vahendustasudeta.</p>
+          <p data-lang="en">Your venue is featured to all members in the app. No ad spend. No middleman fees.</p>
         </div>
         <div class="value-card">
-          <div class="value-icon">🎯</div>
-          <h3 data-lang="et">Sina kontrolid</h3>
-          <h3 data-lang="en">You're in Control</h3>
-          <p data-lang="et">Vali oma pakkumised, määra piirangud, muuda igal ajal. Tühista 30 päeva etteteatamisega.</p>
-          <p data-lang="en">Choose your offers, set limits, modify anytime. Cancel with 30 days notice.</p>
+          <div class="value-icon">📊</div>
+          <h3 data-lang="et">Jälgi tulemusi</h3>
+          <h3 data-lang="en">Track Results</h3>
+          <p data-lang="et">Näete reaalajas, kui palju lunastusi on tehtud. Teate täpselt, mida programm teile toob.</p>
+          <p data-lang="en">See redemptions in real-time. Know exactly what the program brings you.</p>
         </div>
       </div>
     </section>
@@ -555,8 +633,8 @@
       <div class="goals-grid">
         <div class="goal-item">
           <div class="goal-number">50+</div>
-          <div class="goal-label" data-lang="et">Partnerrestoran Tallinnas</div>
-          <div class="goal-label" data-lang="en">Partner restaurants in Tallinn</div>
+          <div class="goal-label" data-lang="et">Partnerit Tallinnas</div>
+          <div class="goal-label" data-lang="en">Partners in Tallinn</div>
         </div>
         <div class="goal-item">
           <div class="goal-number">5,000+</div>
@@ -565,8 +643,8 @@
         </div>
         <div class="goal-item">
           <div class="goal-number">3</div>
-          <div class="goal-label" data-lang="et">Balti riiki (EE, LV, LT)</div>
-          <div class="goal-label" data-lang="en">Baltic countries (EE, LV, LT)</div>
+          <div class="goal-label" data-lang="et">Balti riiki</div>
+          <div class="goal-label" data-lang="en">Baltic countries</div>
         </div>
       </div>
     </section>
@@ -576,7 +654,7 @@
       <h2 data-lang="et">Nomi Pass vs Bolt DineOut</h2>
       <h2 data-lang="en">Nomi Pass vs Bolt DineOut</h2>
 
-      <table class="comparison-table">
+      <table class="comparison-table" data-lang="et">
         <thead>
           <tr>
             <th></th>
@@ -586,51 +664,76 @@
         </thead>
         <tbody>
           <tr>
-            <td data-lang="et">Komisjonitasu</td>
-            <td data-lang="en">Commission fee</td>
-            <td class="highlight-cell"><span class="check">✓</span> 0%</td>
-            <td data-lang="et">Lepingupõhine tasu</td>
-            <td data-lang="en">Contract-based fee</td>
+            <td>Komisjonitasu</td>
+            <td><span class="check">✓</span> 0%</td>
+            <td>Lepingupõhine tasu</td>
           </tr>
           <tr>
-            <td data-lang="et">Pakkumiste kontroll</td>
-            <td data-lang="en">Deal control</td>
-            <td class="highlight-cell" data-lang="et"><span class="check">✓</span> Täielik kontroll</td>
-            <td class="highlight-cell" data-lang="en"><span class="check">✓</span> Full control</td>
-            <td data-lang="et">Vajab Account Manageri</td>
-            <td data-lang="en">Requires Account Manager</td>
+            <td>Pakkumiste kontroll</td>
+            <td><span class="check">✓</span> Täielik kontroll</td>
+            <td>Vajab Account Manageri</td>
           </tr>
           <tr>
-            <td data-lang="et">Väljamaksed</td>
-            <td data-lang="en">Payouts</td>
-            <td class="highlight-cell" data-lang="et"><span class="check">✓</span> Kohene (sinu kassasse)</td>
-            <td class="highlight-cell" data-lang="en"><span class="check">✓</span> Instant (to your POS)</td>
-            <td data-lang="et">Iganädalased väljamaksed</td>
-            <td data-lang="en">Weekly payouts</td>
+            <td>Väljamaksed</td>
+            <td><span class="check">✓</span> Kohene (teie kassa)</td>
+            <td>Iganädalased väljamaksed</td>
           </tr>
           <tr>
-            <td data-lang="et">Tehingute jälgimine</td>
-            <td data-lang="en">Transaction tracking</td>
-            <td class="highlight-cell" data-lang="et"><span class="check">✓</span> Automaatne PIN-süsteem</td>
-            <td class="highlight-cell" data-lang="en"><span class="check">✓</span> Automatic PIN system</td>
-            <td data-lang="et">Käsitsi Transaction ID</td>
-            <td data-lang="en">Manual Transaction ID</td>
+            <td>Tehingute jälgimine</td>
+            <td><span class="check">✓</span> Automaatne PIN-süsteem</td>
+            <td>Käsitsi Transaction ID</td>
           </tr>
           <tr>
-            <td data-lang="et">Sihtrühm</td>
-            <td data-lang="en">Target audience</td>
-            <td class="highlight-cell" data-lang="et">Premium liikmeskond</td>
-            <td class="highlight-cell" data-lang="en">Premium membership</td>
-            <td data-lang="et">Bolt Food kasutajad</td>
-            <td data-lang="en">Bolt Food users</td>
+            <td>Sihtrühm</td>
+            <td>Premium liikmeskond</td>
+            <td>Bolt Food kasutajad</td>
           </tr>
           <tr>
-            <td data-lang="et">Fookus</td>
-            <td data-lang="en">Focus</td>
-            <td class="highlight-cell" data-lang="et">Dine-in kogemused</td>
-            <td class="highlight-cell" data-lang="en">Dine-in experiences</td>
-            <td data-lang="et">Delivery + dine-in</td>
-            <td data-lang="en">Delivery + dine-in</td>
+            <td>Fookus</td>
+            <td>Dine-in kogemused</td>
+            <td>Delivery + dine-in</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="comparison-table" data-lang="en">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nomi Pass</th>
+            <th>Bolt DineOut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Commission fee</td>
+            <td><span class="check">✓</span> 0%</td>
+            <td>Contract-based fee</td>
+          </tr>
+          <tr>
+            <td>Deal control</td>
+            <td><span class="check">✓</span> Full control</td>
+            <td>Requires Account Manager</td>
+          </tr>
+          <tr>
+            <td>Payouts</td>
+            <td><span class="check">✓</span> Instant (your POS)</td>
+            <td>Weekly payouts</td>
+          </tr>
+          <tr>
+            <td>Transaction tracking</td>
+            <td><span class="check">✓</span> Automatic PIN system</td>
+            <td>Manual Transaction ID</td>
+          </tr>
+          <tr>
+            <td>Target audience</td>
+            <td>Premium membership</td>
+            <td>Bolt Food users</td>
+          </tr>
+          <tr>
+            <td>Focus</td>
+            <td>Dine-in experiences</td>
+            <td>Delivery + dine-in</td>
           </tr>
         </tbody>
       </table>
@@ -641,30 +744,35 @@
       <h2 data-lang="et">Meeskond</h2>
       <h2 data-lang="en">The Team</h2>
 
-      <div class="team-grid">
+      <!-- Founders -->
+      <div class="founders-row">
         <div class="team-card">
           <img src="images/robin.png" alt="Robin Nool" class="team-photo">
           <div class="team-name">Robin Nool</div>
-          <div class="team-role" data-lang="et">Kaasasutaja & CEO</div>
-          <div class="team-role" data-lang="en">Co-founder & CEO</div>
+          <div class="team-role" data-lang="et">Kaasasutaja</div>
+          <div class="team-role" data-lang="en">Co-founder</div>
           <p class="team-bio" data-lang="et">4+ aastat müügi ja lead-genereerimise valdkonnas. Müüs oma agentuuri osaluse kaasasutajale. Matemaatika ja füüsika taust andmeteaduse suunal. 3-kordne Eesti meister.</p>
           <p class="team-bio" data-lang="en">4+ years in sales and lead generation. Exited his agency shares to co-founder. Math & physics background with data science focus. 3x Estonian national champion.</p>
         </div>
         <div class="team-card">
           <img src="images/rene.png" alt="René-Karl Lambert" class="team-photo">
           <div class="team-name">René-Karl Lambert</div>
-          <div class="team-role" data-lang="et">Kaasasutaja & CTO</div>
-          <div class="team-role" data-lang="en">Co-founder & CTO</div>
-          <p class="team-bio" data-lang="et">Ehitanud 7-8 kohalisi blockchain-ettevõtteid. Fractional COO agentuuridele. Viimased 1.5 aastat AI-süsteemide ja tehniliste lahenduste arendamisel.</p>
+          <div class="team-role" data-lang="et">Kaasasutaja</div>
+          <div class="team-role" data-lang="en">Co-founder</div>
+          <p class="team-bio" data-lang="et">Ehitanud 7-8 kohalisi blockchain ettevõtteid. Fractional COO agentuuridele. Viimased 1.5 aastat AI-süsteemide ja tehniliste lahenduste arendamisel.</p>
           <p class="team-bio" data-lang="en">Built 7-8 figure blockchain companies. Fractional COO for agencies. Last 1.5 years building AI systems and tech solutions.</p>
         </div>
-        <div class="team-card">
+      </div>
+
+      <!-- Advisor -->
+      <div class="advisor-row">
+        <div class="team-card advisor">
           <img src="images/martin.png" alt="Martin Paschinger" class="team-photo">
           <div class="team-name">Martin Paschinger</div>
-          <div class="team-role" data-lang="et">Kaasasutaja & COO</div>
-          <div class="team-role" data-lang="en">Co-founder & COO</div>
-          <p class="team-bio" data-lang="et">10+ aastat hospitality-valdkonnas. Juhib edukat reisioperaatori ettevõtet 14+ asukohaga üle maailma ja 450-liikmelise meeskonnaga.</p>
-          <p class="team-bio" data-lang="en">10+ years in hospitality. Runs a successful tour operator business with 14+ locations worldwide and a team of 450.</p>
+          <div class="team-role" data-lang="et">Asutajanõunik</div>
+          <div class="team-role" data-lang="en">Founding Advisor</div>
+          <p class="team-bio" data-lang="et">10+ aastat hospitality valdkonnas. Juhib edukat reisioperaatorit 14+ asukohaga üle maailma ja 450-liikmelise meeskonnaga.</p>
+          <p class="team-bio" data-lang="en">10+ years in hospitality. Runs a successful tour operator with 14+ locations worldwide and a team of 450.</p>
         </div>
       </div>
     </section>
@@ -674,20 +782,20 @@
       <h2 data-lang="et">Kus me praegu oleme</h2>
       <h2 data-lang="en">Where We Are Now</h2>
 
-      <div class="stage-badge" data-lang="et">Pre-launch faas</div>
+      <div class="stage-badge" data-lang="et">Eellansseerimise faas</div>
       <div class="stage-badge" data-lang="en">Pre-launch phase</div>
 
       <ul data-lang="et">
-        <li>Äpp on arenduses, lansseerime Q2 2026</li>
+        <li>Äpp on arenduses, lansseerime 2026 teises kvartalis</li>
         <li>Kogume asutajapartnereid Tallinnas</li>
         <li>Asutajapartnerid saavad eluaegse tasuta staatuse</li>
-        <li>Otsime 10-15 esimest restorani/baari pilootprogrammi</li>
+        <li>Otsime 10-15 esimest restorani ja baari pilootprogrammi</li>
       </ul>
       <ul data-lang="en">
         <li>App in development, launching Q2 2026</li>
         <li>Onboarding founding partners in Tallinn</li>
         <li>Founding partners get lifetime free status</li>
-        <li>Looking for 10-15 first restaurants/bars for pilot</li>
+        <li>Looking for 10-15 first restaurants and bars for pilot</li>
       </ul>
     </section>
 
@@ -701,15 +809,15 @@
 
       <ul data-lang="et">
         <li><strong>Tutvustused:</strong> Ühendage meid baaride ja restoranidega, kes võiksid olla huvitatud asutajapartneri staatusest</li>
-        <li><strong>Tagasiside:</strong> Hospitality-professionaalide vaade aitab meil ehitada paremat toodet</li>
+        <li><strong>Tagasiside:</strong> Hospitality-professionaalide arvamus aitab meil ehitada paremat toodet</li>
         <li><strong>Valideerimine:</strong> EBA toetus annab meile usaldusväärsust valdkonna silmis</li>
         <li><strong>Pilootpartnerid:</strong> EBA liikmed saavad esimesena uut platvormi proovida</li>
       </ul>
       <ul data-lang="en">
-        <li><strong>Introductions:</strong> Connect us with bars and restaurants who might be interested in founding partner status</li>
+        <li><strong>Introductions:</strong> Connect us with bars and restaurants interested in founding partner status</li>
         <li><strong>Feedback:</strong> Hospitality professionals' input helps us build a better product</li>
         <li><strong>Validation:</strong> EBA support gives us credibility in the industry</li>
-        <li><strong>Pilot partners:</strong> EBA members get first access to try the new platform</li>
+        <li><strong>Pilot partners:</strong> EBA members get first access to the platform</li>
       </ul>
     </section>
 
@@ -718,8 +826,8 @@
       <h2 data-lang="et">Võta ühendust</h2>
       <h2 data-lang="en">Get in Touch</h2>
 
-      <p data-lang="et">Hea meelega räägime lähemalt ja vastame küsimustele.</p>
-      <p data-lang="en">Happy to discuss further and answer any questions.</p>
+      <p data-lang="et">Räägime lähemalt ja vastame küsimustele.</p>
+      <p data-lang="en">Let's discuss further and answer any questions.</p>
 
       <div class="cta-contact">
         <a href="mailto:rob@windgrowth.com">📧 rob@windgrowth.com</a>
