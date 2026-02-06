@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomi Pass x Eesti Baarmenite Assotsiatsioon</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #1A1A1A;
+      --black-deep: #111111;
+      --accent: #C4A77D;
+      --accent-hover: #D4B78D;
+      --white: #FFFFFF;
+      --gray: #888888;
+      --gray-light: #CCCCCC;
+      --border: #2A2A2A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--black-deep);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+    }
+
+    .logo .nomi {
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .logo .pass {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+      background: var(--border);
+      padding: 4px;
+      border-radius: 8px;
+    }
+
+    .lang-btn {
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: var(--white);
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(196, 167, 125, 0.15);
+      border: 1px solid rgba(196, 167, 125, 0.3);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(32px, 5vw, 44px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--gray-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--gray-light);
+      margin-bottom: 16px;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    li {
+      font-size: 16px;
+      color: var(--gray-light);
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* Value Props Grid */
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .value-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .value-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .value-card p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .value-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    /* Goals */
+    .goals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .goal-item {
+      background: linear-gradient(135deg, rgba(196, 167, 125, 0.1), transparent);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .goal-number {
+      font-family: 'Sora', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .goal-label {
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    /* Team */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 3px solid var(--border);
+    }
+
+    .team-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .team-bio {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table th {
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .comparison-table th:first-child {
+      color: var(--white);
+    }
+
+    .comparison-table td {
+      font-size: 15px;
+      color: var(--gray-light);
+    }
+
+    .comparison-table td:first-child {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .check {
+      color: #4CAF50;
+    }
+
+    .cross {
+      color: #888;
+    }
+
+    .highlight-cell {
+      background: rgba(196, 167, 125, 0.08);
+    }
+
+    /* Video Placeholder */
+    .video-placeholder {
+      background: var(--black);
+      border: 2px dashed var(--border);
+      border-radius: 16px;
+      padding: 60px 24px;
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .video-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .video-text {
+      font-size: 16px;
+      color: var(--gray);
+    }
+
+    /* Stage Badge */
+    .stage-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--black);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(196, 167, 125, 0.15), rgba(196, 167, 125, 0.05));
+      border: 1px solid rgba(196, 167, 125, 0.3);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta-section h2 {
+      justify-content: center;
+    }
+
+    .cta-section h2::before {
+      display: none;
+    }
+
+    .cta-contact {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta-contact a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .cta-contact a:hover {
+      color: var(--accent);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #555;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* Language content control */
+    [data-lang="en"] { display: none; }
+    body.lang-en [data-lang="et"] { display: none; }
+    body.lang-en [data-lang="en"] { display: block; }
+    body.lang-en li[data-lang="en"] { display: list-item; }
+    body.lang-en span[data-lang="en"] { display: inline; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .container {
+        padding: 40px 20px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .comparison-table {
+        font-size: 13px;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 12px 8px;
+      }
+
+      .cta-contact {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="https://nomipass.com" class="logo">
+      <span class="nomi">nomi </span><span class="pass">pass</span>
+    </a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('et')">Eesti</button>
+      <button class="lang-btn" onclick="setLang('en')">English</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-badge" data-lang="et">Eesti Baarmenite Assotsiatsioonile</div>
+      <div class="hero-badge" data-lang="en">For the Estonian Barmen Association</div>
+
+      <h1 data-lang="et">Tutvustame Nomi Passi</h1>
+      <h1 data-lang="en">Introducing Nomi Pass</h1>
+
+      <p class="hero-subtitle" data-lang="et">Liikmelisuspõhine äpp, mis toob uusi kliente Tallinna parimatesse restoranidesse ja baaridesse — ilma komisjonitasudeta.</p>
+      <p class="hero-subtitle" data-lang="en">A membership-based app bringing new customers to Tallinn's best restaurants and bars — with zero commission fees.</p>
+    </div>
+
+    <!-- What We're Building -->
+    <section class="section">
+      <h2 data-lang="et">Mida me ehitame?</h2>
+      <h2 data-lang="en">What We're Building</h2>
+
+      <p data-lang="et">Nomi Pass on liikmelisusäpp, kus liikmed maksavad aastamaksu, et saada eksklusiivsetele pakkumistele ligipääs — 2-for-1 söögikorrad, hotellikingitused, spa-eripakkumised ja palju muud.</p>
+      <p data-lang="en">Nomi Pass is a membership app where members pay an annual fee to access exclusive deals — 2-for-1 dining, hotel discounts, spa specials, and more.</p>
+
+      <p data-lang="et">Restoranid ja baarid määravad ise oma pakkumised, päevad ja kellaajad. Raha tuleb liikmetelt, mitte asutustelt — see tähendab <strong>0% komisjonitasu</strong> partneritele.</p>
+      <p data-lang="en">Restaurants and bars set their own deals, days, and times. Revenue comes from members, not venues — meaning <strong>0% commission</strong> for partners.</p>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section">
+      <h2 data-lang="et">Väärtuspakkumine partneritele</h2>
+      <h2 data-lang="en">Value Proposition for Partners</h2>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-icon">👥</div>
+          <h3 data-lang="et">Uued kliendid</h3>
+          <h3 data-lang="en">New Customers</h3>
+          <p data-lang="et">Ligipääs tuhandetele liikmetele, kes aktiivselt otsivad kohti, kus süüa ja juua.</p>
+          <p data-lang="en">Access to thousands of members actively looking for places to dine and drink.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📅</div>
+          <h3 data-lang="et">Täida vaiksed tunnid</h3>
+          <h3 data-lang="en">Fill Quiet Hours</h3>
+          <p data-lang="et">Määra pakkumised just aegadele, mil vajad rohkem kliente — teisipäeva õhtud, pärastlõunad jne.</p>
+          <p data-lang="en">Set deals for times when you need more traffic — Tuesday nights, afternoon slots, etc.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💰</div>
+          <h3 data-lang="et">Null komisjonitasu</h3>
+          <h3 data-lang="en">Zero Commission</h3>
+          <p data-lang="et">Erinevalt delivery-äppidest me ei võta müügilt komisjoni. Tasuta registreerimine, tasuta kasutamine.</p>
+          <p data-lang="en">Unlike delivery apps, we don't take a cut of your sales. Free to join, free to use.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3 data-lang="et">Sina kontrolid</h3>
+          <h3 data-lang="en">You're in Control</h3>
+          <p data-lang="et">Vali oma pakkumised, määra piirangud, muuda igal ajal. Tühista 30 päeva etteteatamisega.</p>
+          <p data-lang="en">Choose your offers, set limits, modify anytime. Cancel with 30 days notice.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Video -->
+    <section class="section">
+      <h2 data-lang="et">Kuidas see töötab</h2>
+      <h2 data-lang="en">How It Works</h2>
+
+      <div class="video-placeholder">
+        <div class="video-icon">▶️</div>
+        <p class="video-text" data-lang="et">Demo video tuleb peagi</p>
+        <p class="video-text" data-lang="en">Demo video coming soon</p>
+      </div>
+    </section>
+
+    <!-- Year One Goals -->
+    <section class="section">
+      <h2 data-lang="et">Esimese aasta eesmärgid</h2>
+      <h2 data-lang="en">Year One Goals</h2>
+
+      <div class="goals-grid">
+        <div class="goal-item">
+          <div class="goal-number">50+</div>
+          <div class="goal-label" data-lang="et">Partnerrestoran Tallinnas</div>
+          <div class="goal-label" data-lang="en">Partner restaurants in Tallinn</div>
+        </div>
+        <div class="goal-item">
+          <div class="goal-number">5,000+</div>
+          <div class="goal-label" data-lang="et">Aktiivset liiget</div>
+          <div class="goal-label" data-lang="en">Active members</div>
+        </div>
+        <div class="goal-item">
+          <div class="goal-number">3</div>
+          <div class="goal-label" data-lang="et">Balti riiki (EE, LV, LT)</div>
+          <div class="goal-label" data-lang="en">Baltic countries (EE, LV, LT)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison with Bolt DineOut -->
+    <section class="section">
+      <h2 data-lang="et">Nomi Pass vs Bolt DineOut</h2>
+      <h2 data-lang="en">Nomi Pass vs Bolt DineOut</h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nomi Pass</th>
+            <th>Bolt DineOut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-lang="et">Komisjonitasu</td>
+            <td data-lang="en">Commission fee</td>
+            <td class="highlight-cell"><span class="check">✓</span> 0%</td>
+            <td data-lang="et">Lepingupõhine tasu</td>
+            <td data-lang="en">Contract-based fee</td>
+          </tr>
+          <tr>
+            <td data-lang="et">Pakkumiste kontroll</td>
+            <td data-lang="en">Deal control</td>
+            <td class="highlight-cell" data-lang="et"><span class="check">✓</span> Täielik kontroll</td>
+            <td class="highlight-cell" data-lang="en"><span class="check">✓</span> Full control</td>
+            <td data-lang="et">Vajab Account Manageri</td>
+            <td data-lang="en">Requires Account Manager</td>
+          </tr>
+          <tr>
+            <td data-lang="et">Väljamaksed</td>
+            <td data-lang="en">Payouts</td>
+            <td class="highlight-cell" data-lang="et"><span class="check">✓</span> Kohene (sinu kassasse)</td>
+            <td class="highlight-cell" data-lang="en"><span class="check">✓</span> Instant (to your POS)</td>
+            <td data-lang="et">Iganädalased väljamaksed</td>
+            <td data-lang="en">Weekly payouts</td>
+          </tr>
+          <tr>
+            <td data-lang="et">Tehingute jälgimine</td>
+            <td data-lang="en">Transaction tracking</td>
+            <td class="highlight-cell" data-lang="et"><span class="check">✓</span> Automaatne PIN-süsteem</td>
+            <td class="highlight-cell" data-lang="en"><span class="check">✓</span> Automatic PIN system</td>
+            <td data-lang="et">Käsitsi Transaction ID</td>
+            <td data-lang="en">Manual Transaction ID</td>
+          </tr>
+          <tr>
+            <td data-lang="et">Sihtrühm</td>
+            <td data-lang="en">Target audience</td>
+            <td class="highlight-cell" data-lang="et">Premium liikmeskond</td>
+            <td class="highlight-cell" data-lang="en">Premium membership</td>
+            <td data-lang="et">Bolt Food kasutajad</td>
+            <td data-lang="en">Bolt Food users</td>
+          </tr>
+          <tr>
+            <td data-lang="et">Fookus</td>
+            <td data-lang="en">Focus</td>
+            <td class="highlight-cell" data-lang="et">Dine-in kogemused</td>
+            <td class="highlight-cell" data-lang="en">Dine-in experiences</td>
+            <td data-lang="et">Delivery + dine-in</td>
+            <td data-lang="en">Delivery + dine-in</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- The Team -->
+    <section class="section">
+      <h2 data-lang="et">Meeskond</h2>
+      <h2 data-lang="en">The Team</h2>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="images/robin.png" alt="Robin Nool" class="team-photo">
+          <div class="team-name">Robin Nool</div>
+          <div class="team-role" data-lang="et">Kaasasutaja & CEO</div>
+          <div class="team-role" data-lang="en">Co-founder & CEO</div>
+          <p class="team-bio" data-lang="et">4+ aastat müügi ja lead-genereerimise valdkonnas. Müüs oma agentuuri osaluse kaasasutajale. Matemaatika ja füüsika taust andmeteaduse suunal. 3-kordne Eesti meister.</p>
+          <p class="team-bio" data-lang="en">4+ years in sales and lead generation. Exited his agency shares to co-founder. Math & physics background with data science focus. 3x Estonian national champion.</p>
+        </div>
+        <div class="team-card">
+          <img src="images/rene.png" alt="René-Karl Lambert" class="team-photo">
+          <div class="team-name">René-Karl Lambert</div>
+          <div class="team-role" data-lang="et">Kaasasutaja & CTO</div>
+          <div class="team-role" data-lang="en">Co-founder & CTO</div>
+          <p class="team-bio" data-lang="et">Ehitanud 7-8 kohalisi blockchain-ettevõtteid. Fractional COO agentuuridele. Viimased 1.5 aastat AI-süsteemide ja tehniliste lahenduste arendamisel.</p>
+          <p class="team-bio" data-lang="en">Built 7-8 figure blockchain companies. Fractional COO for agencies. Last 1.5 years building AI systems and tech solutions.</p>
+        </div>
+        <div class="team-card">
+          <img src="images/martin.png" alt="Martin Paschinger" class="team-photo">
+          <div class="team-name">Martin Paschinger</div>
+          <div class="team-role" data-lang="et">Kaasasutaja & COO</div>
+          <div class="team-role" data-lang="en">Co-founder & COO</div>
+          <p class="team-bio" data-lang="et">10+ aastat hospitality-valdkonnas. Juhib edukat reisioperaatori ettevõtet 14+ asukohaga üle maailma ja 450-liikmelise meeskonnaga.</p>
+          <p class="team-bio" data-lang="en">10+ years in hospitality. Runs a successful tour operator business with 14+ locations worldwide and a team of 450.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current Stage -->
+    <section class="section">
+      <h2 data-lang="et">Kus me praegu oleme</h2>
+      <h2 data-lang="en">Where We Are Now</h2>
+
+      <div class="stage-badge" data-lang="et">Pre-launch faas</div>
+      <div class="stage-badge" data-lang="en">Pre-launch phase</div>
+
+      <ul data-lang="et">
+        <li>Äpp on arenduses, lansseerime Q2 2026</li>
+        <li>Kogume asutajapartnereid Tallinnas</li>
+        <li>Asutajapartnerid saavad eluaegse tasuta staatuse</li>
+        <li>Otsime 10-15 esimest restorani/baari pilootprogrammi</li>
+      </ul>
+      <ul data-lang="en">
+        <li>App in development, launching Q2 2026</li>
+        <li>Onboarding founding partners in Tallinn</li>
+        <li>Founding partners get lifetime free status</li>
+        <li>Looking for 10-15 first restaurants/bars for pilot</li>
+      </ul>
+    </section>
+
+    <!-- How EBA Can Help -->
+    <section class="section">
+      <h2 data-lang="et">Kuidas EBA saab aidata</h2>
+      <h2 data-lang="en">How EBA Can Help</h2>
+
+      <p data-lang="et">Otsime koostööd Eesti Baarmenite Assotsiatsiooniga:</p>
+      <p data-lang="en">We're looking to partner with the Estonian Barmen Association:</p>
+
+      <ul data-lang="et">
+        <li><strong>Tutvustused:</strong> Ühendage meid baaride ja restoranidega, kes võiksid olla huvitatud asutajapartneri staatusest</li>
+        <li><strong>Tagasiside:</strong> Hospitality-professionaalide vaade aitab meil ehitada paremat toodet</li>
+        <li><strong>Valideerimine:</strong> EBA toetus annab meile usaldusväärsust valdkonna silmis</li>
+        <li><strong>Pilootpartnerid:</strong> EBA liikmed saavad esimesena uut platvormi proovida</li>
+      </ul>
+      <ul data-lang="en">
+        <li><strong>Introductions:</strong> Connect us with bars and restaurants who might be interested in founding partner status</li>
+        <li><strong>Feedback:</strong> Hospitality professionals' input helps us build a better product</li>
+        <li><strong>Validation:</strong> EBA support gives us credibility in the industry</li>
+        <li><strong>Pilot partners:</strong> EBA members get first access to try the new platform</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <h2 data-lang="et">Võta ühendust</h2>
+      <h2 data-lang="en">Get in Touch</h2>
+
+      <p data-lang="et">Hea meelega räägime lähemalt ja vastame küsimustele.</p>
+      <p data-lang="en">Happy to discuss further and answer any questions.</p>
+
+      <div class="cta-contact">
+        <a href="mailto:rob@windgrowth.com">📧 rob@windgrowth.com</a>
+        <a href="tel:+37259107360">📞 +372 5910 7360</a>
+        <a href="https://nomipass.com">🌐 nomipass.com</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 Nomi Pass
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.remove('lang-en', 'lang-et');
+      if (lang === 'en') {
+        document.body.classList.add('lang-en');
+      }
+
+      // Update button states
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase().includes(lang === 'et' ? 'eesti' : 'english')) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Save preference
+      localStorage.setItem('nomipass-lang', lang);
+    }
+
+    // Load saved preference
+    const savedLang = localStorage.getItem('nomipass-lang');
+    if (savedLang) {
+      setLang(savedLang);
+    }
+  </script>
+</body>
+</html>
