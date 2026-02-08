@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,8 +65,10 @@
 
     /* Logo Header */
     .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 20px 24px;
-      text-align: center;
       border-bottom: 1px solid var(--border);
     }
 
@@ -85,6 +87,36 @@
     .logo .pass {
       font-weight: 600;
       color: var(--accent);
+    }
+
+    /* Language Toggle */
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+      background: var(--border);
+      padding: 4px;
+      border-radius: 8px;
+    }
+
+    .lang-btn {
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: var(--white);
     }
 
     /* Hero Section */
@@ -672,6 +704,11 @@
       .form-section {
         padding-bottom: 100px;
       }
+
+      .header {
+        flex-direction: column;
+        gap: 12px;
+      }
     }
 
     /* Thank You State (hidden by default) */
@@ -700,6 +737,36 @@
     .thank-you a {
       color: var(--accent);
     }
+
+    /* Video Placeholder */
+    .video-placeholder {
+      background: var(--black);
+      border: 2px dashed var(--border);
+      border-radius: 16px;
+      padding: 60px 24px;
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .video-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .video-text {
+      font-size: 16px;
+      color: var(--gray);
+    }
+
+    /* Language content control — must be last to override component display types */
+    [data-lang="en"] { display: none; }
+    body.lang-en [data-lang="et"] { display: none; }
+    body.lang-en [data-lang="en"] { display: block; }
+    body.lang-en span[data-lang="en"] { display: inline; }
+    body.lang-en p[data-lang="en"] { display: block; }
+    body.lang-en .hero-badge[data-lang="en"] { display: inline-block; }
+    body.lang-en .trust-strip[data-lang="en"] { display: flex; }
   </style>
 </head>
 <body>
@@ -708,161 +775,222 @@
     <a href="/" class="logo" style="text-decoration: none;">
       <span class="nomi">nomi </span><span class="pass">pass</span>
     </a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('et')">Eesti</button>
+      <button class="lang-btn" onclick="setLang('en')">English</button>
+    </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-badge">For Restaurants & Bars in Tallinn</div>
-    <h1>New Customers Through Your Door — At Zero Cost</h1>
-    <p>Join nomi pass, the membership app bringing hungry diners to Tallinn's best restaurants and bars. No signup fee. No commission. No catch.</p>
+    <div class="hero-badge" data-lang="et">Restoranidele ja baaridele Tallinnas</div>
+    <div class="hero-badge" data-lang="en">For Restaurants & Bars in Tallinn</div>
+
+    <h1 data-lang="et">Uued kliendid teie ukse taha — nullkuluga</h1>
+    <h1 data-lang="en">New Customers Through Your Door — At Zero Cost</h1>
+
+    <p data-lang="et">Liituge Nomi Passiga — liikmelisusäpp, mis toob näljased sööjad Tallinna parimatesse restoranidesse ja baaridesse. Ilma liitumistasuta. Ilma kuutasuta. Ilma vahendustasuta.</p>
+    <p data-lang="en">Join Nomi Pass, the membership app bringing hungry diners to Tallinn's best restaurants and bars. No signup fee. No commission. No catch.</p>
+
     <a href="#apply" class="btn-primary">
-      Apply to Join
+      <span data-lang="et">Liituge Nomiga</span>
+      <span data-lang="en">Apply to Join</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-    <div class="trust-strip">
+
+    <div class="trust-strip" data-lang="et">
+      <span><span class="check">&#10003;</span> &#8364;0 liitumistasu</span>
+      <span><span class="check">&#10003;</span> 0% vahendustasu</span>
+      <span><span class="check">&#10003;</span> Tühista igal ajal</span>
+    </div>
+    <div class="trust-strip" data-lang="en">
       <span><span class="check">&#10003;</span> &#8364;0 to join</span>
       <span><span class="check">&#10003;</span> 0% commission</span>
       <span><span class="check">&#10003;</span> Cancel anytime</span>
-      <span><span class="check">&#10003;</span> 15 founding spots</span>
     </div>
   </section>
 
   <!-- Benefits Section -->
   <section class="benefits-section">
-    <h2 class="section-title">What Your Venue Gets</h2>
+    <h2 class="section-title" data-lang="et">Mida teie asutus saab</h2>
+    <h2 class="section-title" data-lang="en">What Your Venue Gets</h2>
     <div class="benefits-grid">
       <div class="benefit-card">
         <div class="benefit-icon">👥</div>
-        <h3>New Customers</h3>
-        <p>Members actively looking for places to dine</p>
+        <h3 data-lang="et">Uued kliendid</h3>
+        <h3 data-lang="en">New Customers</h3>
+        <p data-lang="et">Liikmed, kes aktiivselt otsivad söögikohti</p>
+        <p data-lang="en">Members actively looking for places to dine</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">📅</div>
-        <h3>Fill Slow Hours</h3>
-        <p>Turn quiet times into revenue</p>
+        <h3 data-lang="et">Täida vaiksed tunnid</h3>
+        <h3 data-lang="en">Fill Slow Hours</h3>
+        <p data-lang="et">Muutke vaiksed ajad tuluks</p>
+        <p data-lang="en">Turn quiet times into revenue</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">📣</div>
-        <h3>Free Marketing</h3>
-        <p>Featured to all members, no ad spend</p>
+        <h3 data-lang="et">Tasuta turundus</h3>
+        <h3 data-lang="en">Free Marketing</h3>
+        <p data-lang="et">Nähtav kõigile liikmetele, reklaamikuluta</p>
+        <p data-lang="en">Featured to all members, no ad spend</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">📊</div>
-        <h3>Track Results</h3>
-        <p>See every redemption in real-time</p>
+        <h3 data-lang="et">Jälgi tulemusi</h3>
+        <h3 data-lang="en">Track Results</h3>
+        <p data-lang="et">Vaadake iga lunastust reaalajas</p>
+        <p data-lang="en">See every redemption in real-time</p>
       </div>
     </div>
   </section>
 
   <!-- App Preview Section -->
   <section class="app-preview-section">
-    <h2 class="section-title">See Your Venue in the App</h2>
-    <p class="section-subtitle">Members browse, discover, and redeem deals — all from their phone</p>
+    <h2 class="section-title" data-lang="et">Vaadake oma asutust äpis</h2>
+    <h2 class="section-title" data-lang="en">See Your Venue in the App</h2>
+    <p class="section-subtitle" data-lang="et">Liikmed sirvivad, avastavad ja lunastavad pakkumisi — kõik oma telefonist</p>
+    <p class="section-subtitle" data-lang="en">Members browse, discover, and redeem deals — all from their phone</p>
     <div class="phones-grid">
       <div class="phone-wrapper">
         <div class="phone-frame">
           <img src="images/home.png" alt="Nomi Pass Home Screen">
         </div>
-        <div class="phone-label">Home Screen</div>
+        <div class="phone-label" data-lang="et">Avaleht</div>
+        <div class="phone-label" data-lang="en">Home Screen</div>
       </div>
       <div class="phone-wrapper">
         <div class="phone-frame">
           <img src="images/venue-detail.png" alt="Nomi Pass Venue Detail">
         </div>
-        <div class="phone-label">Venue Detail</div>
+        <div class="phone-label" data-lang="et">Asutuse leht</div>
+        <div class="phone-label" data-lang="en">Venue Detail</div>
       </div>
       <div class="phone-wrapper">
         <div class="phone-frame">
           <img src="images/discover.jpg" alt="Nomi Pass Discover Map">
         </div>
-        <div class="phone-label">Discover Map</div>
+        <div class="phone-label" data-lang="et">Avastamiskaart</div>
+        <div class="phone-label" data-lang="en">Discover Map</div>
       </div>
       <div class="phone-wrapper">
         <div class="phone-frame">
           <img src="images/redeem-confirm.png" alt="Nomi Pass Redeem">
         </div>
-        <div class="phone-label">Redeem Deal</div>
+        <div class="phone-label" data-lang="et">Lunasta pakkumine</div>
+        <div class="phone-label" data-lang="en">Redeem Deal</div>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
   <section>
-    <h2 class="section-title">How It Works</h2>
+    <h2 class="section-title" data-lang="et">Kuidas Nomi töötab</h2>
+    <h2 class="section-title" data-lang="en">How It Works</h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h3>You Choose a Deal</h3>
-          <p>Pick any offer — 2-for-1, 25% off, free appetizer. Set the days and times that work for you.</p>
+          <h3 data-lang="et">Valige pakkumine</h3>
+          <h3 data-lang="en">You Choose a Deal</h3>
+          <p data-lang="et">Valige ükskõik milline pakkumine — 2-eest-1, 25% allahindlust, tasuta eelroog. Määrake päevad ja kellaajad, mis teile sobivad.</p>
+          <p data-lang="en">Pick any offer — 2-for-1, 25% off, free appetizer. Set the days and times that work for you.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h3>Members Find You</h3>
-          <p>Your venue is featured in the app to all paying members looking for places to dine.</p>
+          <h3 data-lang="et">Liikmed leiavad teid</h3>
+          <h3 data-lang="en">Members Find You</h3>
+          <p data-lang="et">Teie asutus on äpis nähtav kõigile maksvatele liikmetele, kes otsivad söögikohti.</p>
+          <p data-lang="en">Your venue is featured in the app to all paying members looking for places to dine.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-content">
-          <h3>Quick PIN Verification</h3>
-          <p>Customer enters their PIN, your staff enters your venue's 4-digit PIN. Discount applied. Done.</p>
+          <h3 data-lang="et">Kiire PIN-kinnitus</h3>
+          <h3 data-lang="en">Quick PIN Verification</h3>
+          <p data-lang="et">Klient sisestab oma PIN-koodi, teie töötaja sisestab teie asutuse 4-kohalise PIN-koodi. Allahindlus rakendatud. Valmis.</p>
+          <p data-lang="en">Customer enters their PIN, your staff enters your venue's 4-digit PIN. Discount applied. Done.</p>
         </div>
       </div>
     </div>
-    <p class="steps-note">No POS integration. No tablet. No new hardware. Works with your existing setup.</p>
+    <p class="steps-note" data-lang="et">Kassaliidestust pole vaja. Tahvelarvutit pole vaja. Uut riistvara pole vaja. Töötab teie olemasoleva süsteemiga.</p>
+    <p class="steps-note" data-lang="en">No POS integration. No tablet. No new hardware. Works with your existing setup.</p>
+
+    <div class="video-placeholder">
+      <div class="video-icon">&#9654;&#65039;</div>
+      <p class="video-text" data-lang="et">Demo video tuleb peagi</p>
+      <p class="video-text" data-lang="en">Demo video coming soon</p>
+    </div>
   </section>
 
   <!-- Stats / Why Join -->
   <div class="stats-section">
-    <h2 class="section-title">Zero Cost. Real Results.</h2>
+    <h2 class="section-title" data-lang="et">Nullkulu. Reaalsed tulemused.</h2>
+    <h2 class="section-title" data-lang="en">Zero Cost. Real Results.</h2>
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-value">&#8364;0</div>
-        <div class="stat-label">Cost to join</div>
+        <div class="stat-label" data-lang="et">Liitumistasu</div>
+        <div class="stat-label" data-lang="en">Cost to join</div>
       </div>
       <div class="stat">
         <div class="stat-value">0%</div>
-        <div class="stat-label">Commission — ever</div>
+        <div class="stat-label" data-lang="et">Vahendustasu puudub</div>
+        <div class="stat-label" data-lang="en">No commission</div>
       </div>
       <div class="stat">
         <div class="stat-value">1,000+</div>
-        <div class="stat-label">Target members Y1</div>
+        <div class="stat-label" data-lang="et">Eesmärk liikmed 1. aasta</div>
+        <div class="stat-label" data-lang="en">Target members Y1</div>
       </div>
       <div class="stat">
         <div class="stat-value">30d</div>
-        <div class="stat-label">Cancel anytime</div>
+        <div class="stat-label" data-lang="et">Tühista igal ajal</div>
+        <div class="stat-label" data-lang="en">Cancel anytime</div>
       </div>
     </div>
-    <p class="catch-text">
-      We make money from membership fees, not from you. Your venue never pays a cent. You choose the deal, you set the hours, you control everything. If it doesn't work for you, cancel in 30 days.
+    <p class="catch-text" data-lang="et">
+      Meie teenime raha liikmetasudest, mitte teilt. Teie asutus ei maksa sentigi. Teie valite pakkumise, teie määrate kellaajad, teie kontrollite kõike. Kui see teile ei sobi, tühistage 30 päevaga.
+    </p>
+    <p class="catch-text" data-lang="en">
+      We make money from membership fees, not from you. Your venue pays nothing. You choose the deal, you set the hours, you control everything. If it doesn't work for you, cancel in 30 days.
     </p>
   </div>
 
   <!-- Proven Model Section -->
   <section class="proven-section">
-    <h2 class="section-title">A Proven Model Worldwide</h2>
-    <p class="section-subtitle">Dining membership apps drive millions of customers to restaurants and bars globally</p>
+    <h2 class="section-title" data-lang="et">Tõestatud mudel üle maailma</h2>
+    <h2 class="section-title" data-lang="en">A Proven Model Worldwide</h2>
+    <p class="section-subtitle" data-lang="et">Söögikohtade liikmelisusäpid toovad miljoneid kliente restoranidesse ja baaridesse üle maailma</p>
+    <p class="section-subtitle" data-lang="en">Dining membership apps drive millions of customers to restaurants and bars globally</p>
     <div class="proven-grid">
       <div class="proven-card">
         <div class="proven-name">The Entertainer</div>
         <div class="proven-stat"><span class="highlight">6M users</span> · $1.3B impact</div>
-        <div class="proven-region">Middle East & Asia</div>
+        <div class="proven-region" data-lang="et">Lähis-Ida ja Aasia</div>
+        <div class="proven-region" data-lang="en">Middle East & Asia</div>
       </div>
       <div class="proven-card">
         <div class="proven-name">Tastecard</div>
         <div class="proven-stat"><span class="highlight">3M members</span> · 19 years</div>
-        <div class="proven-region">United Kingdom</div>
+        <div class="proven-region" data-lang="et">Ühendkuningriik</div>
+        <div class="proven-region" data-lang="en">United Kingdom</div>
       </div>
       <div class="proven-card">
         <div class="proven-name">NeoTaste</div>
         <div class="proven-stat"><span class="highlight">7,000+ restaurants</span></div>
-        <div class="proven-region">Germany</div>
+        <div class="proven-region" data-lang="et">Saksamaa</div>
+        <div class="proven-region" data-lang="en">Germany</div>
       </div>
     </div>
-    <div class="proven-note">
+    <div class="proven-note" data-lang="et">
+      Ükski neist ei tegutse Baltikumis — meie toome selle tõestatud mudeli esimesena Eestisse.
+    </div>
+    <div class="proven-note" data-lang="en">
       None operate in the Baltics — we're bringing this proven model to Estonia first.
     </div>
   </section>
@@ -870,15 +998,24 @@
   <!-- Form Section -->
   <section class="form-section" id="apply">
     <div class="form-container">
-      <h2 class="section-title">Apply for Launch</h2>
-      <p class="form-subtitle">We're selecting 15 founding restaurant and bar partners in Tallinn. Fill in the form and we'll be in touch within 24 hours.</p>
+      <h2 class="section-title" data-lang="et">Liituge Nomiga</h2>
+      <h2 class="section-title" data-lang="en">Apply for Launch</h2>
+      <p class="form-subtitle" data-lang="et">Valime 15 asutajapartnerit Tallinna restoranide ja baaride seast. Täitke ankeet ja võtame teiega ühendust 24 tunni jooksul.</p>
+      <p class="form-subtitle" data-lang="en">We're selecting 15 founding restaurant and bar partners in Tallinn. Fill in the form and we'll be in touch within 24 hours.</p>
 
       <!-- Gate Question -->
       <div class="gate-question" id="gate-question">
-        <p class="gate-text">Are you a restaurant or bar?</p>
+        <p class="gate-text" data-lang="et">Kas olete restoran või baar?</p>
+        <p class="gate-text" data-lang="en">Are you a restaurant or bar?</p>
         <div class="gate-buttons">
-          <button type="button" class="gate-btn gate-yes" id="gate-yes">Yes, I am</button>
-          <button type="button" class="gate-btn gate-no" id="gate-no">No, I'm not</button>
+          <button type="button" class="gate-btn gate-yes" id="gate-yes">
+            <span data-lang="et">Jah</span>
+            <span data-lang="en">Yes, I am</span>
+          </button>
+          <button type="button" class="gate-btn gate-no" id="gate-no">
+            <span data-lang="et">Ei</span>
+            <span data-lang="en">No, I'm not</span>
+          </button>
         </div>
       </div>
 
@@ -886,97 +1023,163 @@
       <form class="form" action="https://formspree.io/f/xqeljbjz" method="POST" id="partner-form" style="display: none;">
         <div class="form-row two-col">
           <div class="form-group">
-            <label for="restaurant">Venue Name</label>
-            <input type="text" id="restaurant" name="restaurant" placeholder="e.g. The Golden Fork" required>
+            <label for="restaurant">
+              <span data-lang="et">Asutuse nimi</span>
+              <span data-lang="en">Venue Name</span>
+            </label>
+            <input type="text" id="restaurant" name="restaurant" data-placeholder-et="nt Kuldne Kahvel" data-placeholder-en="e.g. The Golden Fork" placeholder="nt Kuldne Kahvel" required>
           </div>
           <div class="form-group">
-            <label for="contact">Contact Name</label>
-            <input type="text" id="contact" name="contact" placeholder="Your name" required>
+            <label for="contact">
+              <span data-lang="et">Kontaktisiku nimi</span>
+              <span data-lang="en">Contact Name</span>
+            </label>
+            <input type="text" id="contact" name="contact" data-placeholder-et="Teie nimi" data-placeholder-en="Your name" placeholder="Teie nimi" required>
           </div>
         </div>
 
         <div class="form-row two-col">
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@restaurant.com" required>
+            <label for="email">
+              <span data-lang="et">E-post</span>
+              <span data-lang="en">Email</span>
+            </label>
+            <input type="email" id="email" name="email" data-placeholder-et="teie@restoran.ee" data-placeholder-en="you@restaurant.com" placeholder="teie@restoran.ee" required>
           </div>
           <div class="form-group">
-            <label for="phone">Phone</label>
+            <label for="phone">
+              <span data-lang="et">Telefon</span>
+              <span data-lang="en">Phone</span>
+            </label>
             <input type="tel" id="phone" name="phone" placeholder="+372 5XXX XXXX" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="location">Location / Neighborhood <span class="optional">(optional)</span></label>
-          <input type="text" id="location" name="location" placeholder="e.g. Old Town, Kalamaja, Telliskivi">
+          <label for="location">
+            <span data-lang="et">Asukoht / Linnaosa <span class="optional">(valikuline)</span></span>
+            <span data-lang="en">Location / Neighborhood <span class="optional">(optional)</span></span>
+          </label>
+          <input type="text" id="location" name="location" data-placeholder-et="nt Vanalinn, Kalamaja, Telliskivi" data-placeholder-en="e.g. Old Town, Kalamaja, Telliskivi" placeholder="nt Vanalinn, Kalamaja, Telliskivi">
         </div>
 
         <div class="form-group">
-          <label for="notes">Anything else? <span class="optional">(optional)</span></label>
-          <textarea id="notes" name="notes" placeholder="Questions, preferred contact times, etc."></textarea>
+          <label for="notes">
+            <span data-lang="et">Midagi veel? <span class="optional">(valikuline)</span></span>
+            <span data-lang="en">Anything else? <span class="optional">(optional)</span></span>
+          </label>
+          <textarea id="notes" name="notes" data-placeholder-et="Küsimused, eelistatud kontaktiaeg jne" data-placeholder-en="Questions, preferred contact times, etc." placeholder="Küsimused, eelistatud kontaktiaeg jne"></textarea>
         </div>
 
         <div class="form-submit">
           <button type="submit" class="btn-primary">
-            Join nomi pass
+            <span data-lang="et">Liitu Nomi Passiga</span>
+            <span data-lang="en">Join Nomi Pass</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </div>
 
-        <p class="form-note">No commitment required. We'll reach out to schedule a quick 10-minute call.</p>
+        <p class="form-note" data-lang="et">Kohustust pole. Võtame teiega ühendust, et leppida kokku kiire 10-minutiline kõne.</p>
+        <p class="form-note" data-lang="en">No commitment required. We'll reach out to schedule a quick 10-minute call.</p>
       </form>
     </div>
   </section>
 
   <!-- FAQ Section -->
   <section class="faq-section">
-    <h2 class="section-title">Frequently Asked Questions</h2>
+    <h2 class="section-title" data-lang="et">Korduma kippuvad küsimused</h2>
+    <h2 class="section-title" data-lang="en">Frequently Asked Questions</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-question">What's the catch? How do you make money?</div>
-        <div class="faq-answer">We charge members a subscription fee (€49/year). Restaurants and bars never pay anything — no signup fee, no commission, no hidden costs. Ever.</div>
+        <div class="faq-question" data-lang="et">Kus on konks? Kuidas te raha teenite?</div>
+        <div class="faq-question" data-lang="en">What's the catch? How do you make money?</div>
+        <div class="faq-answer" data-lang="et">Küsime liikmetelt aastamaksu (€49/aastas). Restoranid ja baarid ei maksa midagi — liitumistasu puudub, vahendustasu puudub, peidetud kulusid pole.</div>
+        <div class="faq-answer" data-lang="en">We charge members a subscription fee (€49/year). Restaurants and bars pay nothing — no signup fee, no commission, no hidden costs.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">How is this different from Chilli.ee?</div>
-        <div class="faq-answer">Chilli sells vouchers and takes a commission from you on every sale. With nomi pass, you pay nothing — no commission, no campaign fees. Customers pay us directly for their membership, and you just honor the deal when they visit.</div>
+        <div class="faq-question" data-lang="et">Kuidas see erineb Chilli.ee-st?</div>
+        <div class="faq-question" data-lang="en">How is this different from Chilli.ee?</div>
+        <div class="faq-answer" data-lang="et">Chilli müüb vautšereid ja võtab igalt müügilt vahendustasu. Nomi Passiga ei maksa te midagi — vahendustasu puudub, kampaaniatasusid pole. Kliendid maksavad meile otse oma liikmelisuse eest ja teie lihtsalt rakendate pakkumist, kui nad külastavad.</div>
+        <div class="faq-answer" data-lang="en">Chilli sells vouchers and takes a commission from you on every sale. With Nomi Pass, you pay nothing — no commission, no campaign fees. Customers pay us directly for their membership, and you just honor the deal when they visit.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">How is this different from Wolt or Bolt Food?</div>
-        <div class="faq-answer">Wolt and Bolt take 20–30% of every order to deliver food to people's homes. We bring people to your venue instead — and we don't take a cent. No commission, no fees, no cut of your sales.</div>
+        <div class="faq-question" data-lang="et">Kuidas see erineb Woltist või Bolt Foodist?</div>
+        <div class="faq-question" data-lang="en">How is this different from Wolt or Bolt Food?</div>
+        <div class="faq-answer" data-lang="et">Wolt ja Bolt võtavad 20–30% igalt tellimiselt toidu kohaletoimetamiseks. Meie toome inimesed hoopis teie asutuse ukse taha — ja me ei võta sentigi. Vahendustasu puudub, tasusid pole, teie müügist ei võta me midagi.</div>
+        <div class="faq-answer" data-lang="en">Wolt and Bolt take 20–30% of every order to deliver food to people's homes. We bring people to your venue instead — and we don't take a cent. No commission, no fees, no cut of your sales.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What kind of deal do I have to offer?</div>
-        <div class="faq-answer">You choose. Most venues offer 2-for-1 on mains, 25% off the bill, or a free appetizer/drink. You set the days, times, and any conditions that work for your business.</div>
+        <div class="faq-question" data-lang="et">Millist pakkumist pean tegema?</div>
+        <div class="faq-question" data-lang="en">What kind of deal do I have to offer?</div>
+        <div class="faq-answer" data-lang="et">Teie otsustate. Enamik asutusi pakub 2-eest-1 põhiroogadele, 25% allahindlust arvelt või tasuta eelrooga/jooki. Teie määrate päevad, kellaajad ja tingimused, mis teie ettevõttele sobivad.</div>
+        <div class="faq-answer" data-lang="en">You choose. Most venues offer 2-for-1 on mains, 25% off the bill, or a free appetizer/drink. You set the days, times, and any conditions that work for your business.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">How does the verification work?</div>
-        <div class="faq-answer">Simple: the customer enters their PIN, then your staff enters your venue's 4-digit PIN. No POS integration, no tablets, no new hardware. Takes 10 seconds.</div>
+        <div class="faq-question" data-lang="et">Kuidas verifitseerimine töötab?</div>
+        <div class="faq-question" data-lang="en">How does the verification work?</div>
+        <div class="faq-answer" data-lang="et">Lihtne: klient sisestab oma PIN-koodi, seejärel sisestab teie töötaja teie asutuse 4-kohalise PIN-koodi. Kassaliidestust pole vaja, tahvelarvuteid pole vaja, uut riistvara pole vaja. Võtab 10 sekundit.</div>
+        <div class="faq-answer" data-lang="en">Simple: the customer enters their PIN, then your staff enters your venue's 4-digit PIN. No POS integration, no tablets, no new hardware. Takes 10 seconds.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">Can I cancel?</div>
-        <div class="faq-answer">Yes, anytime. Give us 30 days notice and you're out. No penalties, no questions asked.</div>
+        <div class="faq-question" data-lang="et">Kas saan tühistada?</div>
+        <div class="faq-question" data-lang="en">Can I cancel?</div>
+        <div class="faq-answer" data-lang="et">Jah, igal ajal. Andke meile 30 päeva ette teada ja oletegi vaba. Trahve pole, küsimusi ei esitata.</div>
+        <div class="faq-answer" data-lang="en">Yes, anytime. Give us 30 days notice and you're out. No penalties, no questions asked.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">When are you launching?</div>
-        <div class="faq-answer">We're onboarding founding restaurant and bar partners now for launch in Tallinn. Apply today and we'll be in touch within 24 hours.</div>
+        <div class="faq-question" data-lang="et">Millal te käivitate?</div>
+        <div class="faq-question" data-lang="en">When are you launching?</div>
+        <div class="faq-answer" data-lang="et">Kogume praegu Tallinnas asutajapartnereid restoranide ja baaride seast. Liituge Nomiga juba täna ja võtame teiega ühendust 24 tunni jooksul.</div>
+        <div class="faq-answer" data-lang="en">We're onboarding founding restaurant and bar partners now for launch in Tallinn. Apply today and we'll be in touch within 24 hours.</div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    &#169; 2026 nomi pass &#183; <a href="https://nomipass.com">nomipass.com</a> &#183; <a href="mailto:rob@windgrowth.com">rob@windgrowth.com</a> &#183; <a href="https://instagram.com/robinnool" target="_blank">@robinnool</a>
+    &#169; 2026 Nomi Pass &#183; <a href="https://nomipass.com">nomipass.com</a> &#183; <a href="mailto:rob@windgrowth.com">rob@windgrowth.com</a> &#183; <a href="https://instagram.com/robinnool" target="_blank">@robinnool</a>
   </footer>
 
   <!-- Mobile Sticky CTA -->
   <div class="sticky-cta" id="sticky-cta">
     <a href="#apply" class="btn-primary">
-      Apply to Join
+      <span data-lang="et">Liituge Nomiga</span>
+      <span data-lang="en">Apply to Join</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
 
   <script>
+    // Language switching
+    function setLang(lang) {
+      document.body.classList.remove('lang-en', 'lang-et');
+      if (lang === 'en') {
+        document.body.classList.add('lang-en');
+      }
+
+      // Update button states
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase().includes(lang === 'et' ? 'eesti' : 'english')) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Update form placeholders
+      document.querySelectorAll('[data-placeholder-et]').forEach(el => {
+        el.placeholder = lang === 'et' ? el.dataset.placeholderEt : el.dataset.placeholderEn;
+      });
+
+      // Save preference
+      localStorage.setItem('nomipass-lang', lang);
+    }
+
+    // Load saved preference
+    const savedLang = localStorage.getItem('nomipass-lang');
+    if (savedLang) {
+      setLang(savedLang);
+    }
+
     // Gate question handling
     const gateQuestion = document.getElementById('gate-question');
     const gateYes = document.getElementById('gate-yes');
@@ -1013,7 +1216,9 @@
       e.preventDefault();
 
       const submitBtn = formEl.querySelector('button[type="submit"]');
-      submitBtn.innerHTML = 'Submitting...';
+      const isEstonian = !document.body.classList.contains('lang-en');
+      submitBtn.querySelector('span[data-lang="et"]').textContent = isEstonian ? 'Saadame...' : 'Saadame...';
+      submitBtn.querySelector('span[data-lang="en"]').textContent = 'Submitting...';
       submitBtn.disabled = true;
 
       const formData = new FormData(formEl);
@@ -1028,9 +1233,13 @@
         // Redirect to thank you page
         window.location.href = '/partners/thankyou';
       } catch (error) {
-        submitBtn.innerHTML = 'Join nomi pass';
+        submitBtn.querySelector('span[data-lang="et"]').textContent = 'Liitu Nomi Passiga';
+        submitBtn.querySelector('span[data-lang="en"]').textContent = 'Join Nomi Pass';
         submitBtn.disabled = false;
-        alert('Something went wrong. Please try again or email us directly at rob@windgrowth.com');
+        const msg = isEstonian
+          ? 'Midagi läks valesti. Proovige uuesti või kirjutage meile otse: rob@windgrowth.com'
+          : 'Something went wrong. Please try again or email us directly at rob@windgrowth.com';
+        alert(msg);
       }
     });
   </script>
