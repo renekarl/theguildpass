@@ -411,6 +411,56 @@
       border: 0;
     }
 
+    /* Proven Model Section */
+    .proven-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    .proven-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .proven-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .proven-stat {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .proven-stat .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .proven-region {
+      font-size: 11px;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    .proven-note {
+      text-align: center;
+      font-size: 14px;
+      color: var(--accent);
+      padding: 20px;
+      background: rgba(196,167,125,0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(196,167,125,0.2);
+    }
+
     .video-placeholder {
       background: var(--black);
       border: 2px dashed var(--border);
@@ -526,6 +576,10 @@
         grid-template-columns: 1fr;
       }
 
+      .proven-grid {
+        grid-template-columns: 1fr;
+      }
+
       .founders-row {
         grid-template-columns: 1fr;
       }
@@ -610,7 +664,7 @@
 
     <!-- Value Proposition -->
     <section class="section">
-      <h2 data-lang="et">Mida teie asutus saab</h2>
+      <h2 data-lang="et">Väärtus restoranidele & baaridele</h2>
       <h2 data-lang="en">What Your Venue Gets</h2>
 
       <div class="value-grid">
@@ -683,6 +737,42 @@
           <div class="goal-label" data-lang="et">Balti riiki</div>
           <div class="goal-label" data-lang="en">Baltic countries</div>
         </div>
+      </div>
+    </section>
+
+    <!-- Proven Model -->
+    <section class="section">
+      <h2 data-lang="et">Tõestatud mudel üle maailma</h2>
+      <h2 data-lang="en">A Proven Model Worldwide</h2>
+
+      <p data-lang="et">Söögikohtade liikmelisusäpid toovad miljoneid kliente restoranidesse ja baaridesse üle maailma</p>
+      <p data-lang="en">Dining membership apps drive millions of customers to restaurants and bars globally</p>
+
+      <div class="proven-grid">
+        <div class="proven-card">
+          <div class="proven-name">The Entertainer</div>
+          <div class="proven-stat"><span class="highlight">6M users</span> · $1.3B impact</div>
+          <div class="proven-region" data-lang="et">Lähis-Ida ja Aasia</div>
+          <div class="proven-region" data-lang="en">Middle East & Asia</div>
+        </div>
+        <div class="proven-card">
+          <div class="proven-name">Tastecard</div>
+          <div class="proven-stat"><span class="highlight">3M members</span> · 19 years</div>
+          <div class="proven-region" data-lang="et">Ühendkuningriik</div>
+          <div class="proven-region" data-lang="en">United Kingdom</div>
+        </div>
+        <div class="proven-card">
+          <div class="proven-name">NeoTaste</div>
+          <div class="proven-stat"><span class="highlight">7,000+ restaurants</span></div>
+          <div class="proven-region" data-lang="et">Saksamaa</div>
+          <div class="proven-region" data-lang="en">Germany</div>
+        </div>
+      </div>
+      <div class="proven-note" data-lang="et">
+        Ükski neist ei tegutse Baltikumis — meie toome selle tõestatud mudeli esimesena Eestisse.
+      </div>
+      <div class="proven-note" data-lang="en">
+        None operate in the Baltics — we're bringing this proven model to Estonia first.
       </div>
     </section>
 
@@ -788,7 +878,7 @@
           <div class="team-name">Robin Nool</div>
           <div class="team-role" data-lang="et">Kaasasutaja</div>
           <div class="team-role" data-lang="en">Co-founder</div>
-          <p class="team-bio" data-lang="et">4+ aastat müügi ja lead-genereerimise valdkonnas. Müüs oma agentuuri osaluse kaasasutajale. Matemaatika ja füüsika taust andmeteaduse suunal. 3-kordne Eesti meister.</p>
+          <p class="team-bio" data-lang="et">4+ aastat müügi ja turundusvaldkonnas. Müüs oma agentuuri osaluse kaasasutajale, et tuua Nomi konsept Balti turule. Matemaatika- ja füüsikabakalaureus ja 3-kordne Eesti meister kergejõustikus.</p>
           <p class="team-bio" data-lang="en">4+ years in sales and lead generation. Exited his agency shares to co-founder. Math & physics background with data science focus. 3x Estonian national champion.</p>
         </div>
         <div class="team-card">
@@ -796,7 +886,7 @@
           <div class="team-name">René-Karl Lambert</div>
           <div class="team-role" data-lang="et">Kaasasutaja</div>
           <div class="team-role" data-lang="en">Co-founder</div>
-          <p class="team-bio" data-lang="et">Ehitanud 7-8 kohalisi blockchain ettevõtteid. Fractional COO agentuuridele. Viimased 1.5 aastat AI-süsteemide ja tehniliste lahenduste arendamisel.</p>
+          <p class="team-bio" data-lang="et">Kaasasutanud <em>blockchain</em> ettevõtteid ja viinud neid $8M+ valuatsioonini. 2.5 aastane kogemus osalise tegevjuhina ehitades AI-süsteeme ja tehnilisi lahendusi turundusagentuuridele. Juhtimiskogemus Kanada õhuväest.</p>
           <p class="team-bio" data-lang="en">Built 7-8 figure blockchain companies. Fractional COO for agencies. Last 1.5 years building AI systems and tech solutions.</p>
         </div>
       </div>
@@ -808,7 +898,7 @@
           <div class="team-name">Martin Paschinger</div>
           <div class="team-role" data-lang="et">Asutajanõunik</div>
           <div class="team-role" data-lang="en">Founding Advisor</div>
-          <p class="team-bio" data-lang="et">10+ aastat hospitality valdkonnas. Juhib edukat reisioperaatorit 14+ asukohaga üle maailma ja 450-liikmelise meeskonnaga.</p>
+          <p class="team-bio" data-lang="et">10+ aastane kogemus turismi ja hotellindusvaldkonnas. Juhib edukat reisikorraldusfirmat 16 asukohaga üle maailma, mis sai alguse Balti turult.</p>
           <p class="team-bio" data-lang="en">10+ years in hospitality. Runs a successful tour operator with 14+ locations worldwide and a team of 450.</p>
         </div>
       </div>
@@ -825,7 +915,6 @@
       <ul data-lang="et">
         <li>Äpp on arenduses, lansseerime 2026 teises kvartalis</li>
         <li>Kogume asutajapartnereid Tallinnas</li>
-        <li>Asutajapartnerid saavad eluaegse tasuta staatuse</li>
         <li>Otsime 10-15 esimest restorani ja baari pilootprogrammi</li>
       </ul>
       <ul data-lang="en">
@@ -845,8 +934,8 @@
       <p data-lang="en">We're looking to partner with the Estonian Barmen Association:</p>
 
       <ul data-lang="et">
-        <li><strong>Tutvustused:</strong> Ühendage meid baaride ja restoranidega, kes võiksid olla huvitatud asutajapartneri staatusest</li>
-        <li><strong>Tagasiside:</strong> Hospitality-professionaalide arvamus aitab meil ehitada paremat toodet</li>
+        <li><strong>Tutvustused:</strong> Ühendage meid baaride ja restoranidega, kes võiksid olla huvitatud liituma Nomiga</li>
+        <li><strong>Tagasiside:</strong> Teie arvamus ja tagasiside aitab meil ehitada platformi paremaks ja tuua visioon ellu</li>
         <li><strong>Valideerimine:</strong> EBA toetus annab meile usaldusväärsust valdkonna silmis</li>
         <li><strong>Pilootpartnerid:</strong> EBA liikmed saavad esimesena uut platvormi proovida</li>
       </ul>
