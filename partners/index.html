@@ -738,7 +738,28 @@
       color: var(--accent);
     }
 
-    /* Video Placeholder */
+    /* Video */
+    .video-wrap {
+      margin-top: 24px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .video-responsive {
+      position: relative;
+      padding-top: 56.25%;
+    }
+
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Video Placeholder (for missing language) */
     .video-placeholder {
       background: var(--black);
       border: 2px dashed var(--border);
@@ -920,10 +941,15 @@
     <p class="steps-note" data-lang="et">Kassaliidestust pole vaja. Tahvelarvutit pole vaja. Uut riistvara pole vaja. Töötab teie olemasoleva süsteemiga.</p>
     <p class="steps-note" data-lang="en">No POS integration. No tablet. No new hardware. Works with your existing setup.</p>
 
-    <div class="video-placeholder">
+    <div class="video-wrap" data-lang="et">
+      <div class="video-responsive">
+        <iframe src="https://fast.wistia.net/embed/iframe/wwfmesyp9o?videoFoam=true" title="Nomi Pass Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="video-placeholder" data-lang="en">
       <div class="video-icon">&#9654;&#65039;</div>
-      <p class="video-text" data-lang="et">Demo video tuleb peagi</p>
-      <p class="video-text" data-lang="en">Demo video coming soon</p>
+      <p class="video-text">Demo video coming soon</p>
     </div>
   </section>
 
