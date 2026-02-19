@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="You've been invited to nomi pass — 2-for-1 dining, hotel deals, and spa experiences across the Baltic region.">
-  <title>You're Invited to nomi pass</title>
+  <meta name="description" content="You've been invited to Nomi Pass — 2-for-1 dining at restaurants, cafes, and bars across the Baltic region.">
+  <title>You're Invited to Nomi Pass</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -18,8 +18,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="You're Invited to nomi pass">
-  <meta property="og:description" content="Join nomi pass and get 2-for-1 dining, hotel deals, and spa experiences across the Baltic region.">
+  <meta property="og:title" content="You're Invited to Nomi Pass">
+  <meta property="og:description" content="Join Nomi Pass and get 2-for-1 dining at restaurants, cafes, and bars across the Baltic region.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.nomipass.com/invite/">
 
@@ -62,14 +62,17 @@
     /* Logo */
     .logo {
       font-family: var(--font-logo);
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 18px;
       letter-spacing: 0.25em;
-      text-transform: lowercase;
-      color: var(--color-white);
+      text-transform: uppercase;
       margin-bottom: 48px;
     }
-    .logo span {
+    .logo .nomi {
+      font-weight: 400;
+      color: var(--color-white);
+    }
+    .logo .pass {
+      font-weight: 600;
       color: var(--color-accent);
     }
 
@@ -261,16 +264,16 @@
 
   <div class="container">
     <!-- Logo -->
-    <div class="logo">nomi<span>pass</span></div>
+    <div class="logo"><span class="nomi">Nomi </span><span class="pass">Pass</span></div>
 
     <!-- Invite card with glow -->
     <div class="glow-wrapper">
       <div class="glow"></div>
       <div class="invite-card">
         <div class="eyebrow">You've Been Invited</div>
-        <h1 class="invite-title">Join nomi pass &amp; start saving</h1>
+        <h1 class="invite-title">Join Nomi Pass &amp; start saving</h1>
         <p class="invite-subtitle">
-          Your friend is sharing 2-for-1 dining, hotel deals, and spa experiences with you.
+          Your friend is sharing 2-for-1 deals at restaurants, cafes, and bars with you.
           Use the code below when you sign up.
         </p>
 
@@ -282,7 +285,7 @@
         <p class="code-hint">Tap to copy</p>
 
         <!-- Download CTA -->
-        <a href="#" class="cta-button" id="ctaButton">Download nomi pass</a>
+        <a href="#" class="cta-button" id="ctaButton">Download Nomi Pass</a>
 
         <p class="status" id="status"></p>
       </div>
@@ -292,23 +295,23 @@
     <div class="rewards">
       <div class="reward-card">
         <div class="reward-emoji">🍽️</div>
-        <div class="reward-text">2-for-1 dining</div>
-        <div class="reward-value">Save 50%</div>
+        <div class="reward-text">Restaurants</div>
+        <div class="reward-value">2-for-1 dining</div>
       </div>
       <div class="reward-card">
-        <div class="reward-emoji">🏨</div>
-        <div class="reward-text">Hotel deals</div>
-        <div class="reward-value">Up to 50% off</div>
+        <div class="reward-emoji">☕</div>
+        <div class="reward-text">Cafes</div>
+        <div class="reward-value">2-for-1 drinks</div>
       </div>
       <div class="reward-card">
-        <div class="reward-emoji">💆</div>
-        <div class="reward-text">Spa experiences</div>
-        <div class="reward-value">Exclusive deals</div>
+        <div class="reward-emoji">🍸</div>
+        <div class="reward-text">Bars</div>
+        <div class="reward-value">2-for-1 cocktails</div>
       </div>
     </div>
 
     <div class="footer">
-      <a href="/">Learn more about nomi pass</a>
+      <a href="/">Learn more about Nomi Pass</a>
     </div>
   </div>
 
@@ -360,7 +363,7 @@
 
         // On mobile, attempt deep link
         if (isIOS || isAndroid) {
-          statusEl.textContent = 'Opening nomi pass...';
+          statusEl.textContent = 'Opening Nomi Pass...';
 
           // Try deep link via hidden iframe (doesn't navigate away if app not installed)
           var iframe = document.createElement('iframe');
@@ -399,7 +402,7 @@
         ctaBtn.href = PLAY_STORE_URL;
       } else {
         // Desktop — show both stores
-        ctaBtn.textContent = 'Download nomi pass';
+        ctaBtn.textContent = 'Download Nomi Pass';
         ctaBtn.href = '/#waitlist';
       }
 
