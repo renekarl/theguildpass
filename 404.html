@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nomi pass</title>
+  <script>
+    // GitHub Pages catch-all for dynamic routes
+    // Redirects /invite/CODE → /invite/?code=CODE so index.html can handle it
+    (function() {
+      var path = window.location.pathname;
+      var match = path.match(/^\/invite\/([A-Za-z0-9\-_]+)\/?$/);
+      if (match) {
+        var code = match[1];
+        window.location.replace('/invite/?code=' + encodeURIComponent(code));
+      } else {
+        // Not an invite link — redirect to homepage
+        window.location.replace('/');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
